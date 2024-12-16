@@ -1,0 +1,144 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+/* -------------------------------------------- */
+/* Root Styles: Background and Fonts           */
+/* -------------------------------------------- */
+.root {
+    -fx-background-color: #f4f6f9;  /* Light background color */
+    -fx-font-family: "Arial", sans-serif; /* Font style */
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50; /* Default text color */
+}
+
+/* -------------------------------------------- */
+/* Label Styles: For better visibility */
+.label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e; /* Darker text for labels */
+    -fx-padding: 10px;
+}
+
+/* -------------------------------------------- */
+/* Button Styles: Modern, hover effect */
+.button {
+    -fx-background-color: #3498db; /* Blue background */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* -------------------------------------------- */
+/* TableView Styles: Clean and modern */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1px;
+    -fx-padding: 10px;
+}
+
+/* Table Row Styling */
+.table-view .table-row-cell {
+    -fx-background-color: #ecf0f1;  /* Light grey for rows */
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #d5dbdb;  /* Darker grey on hover */
+}
+
+/* -------------------------------------------- */
+/* TextField Styles: Clean input fields */
+.text-field {
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.text-field:focused {
+    -fx-border-color: #3498db;  /* Blue border when focused */
+}
+
+/* -------------------------------------------- */
+/* Window Title */
+.window-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* -------------------------------------------- */
+/* Pane & Layout Styling: Centered and Padding */
+.vbox, .hbox {
+    -fx-alignment: center;
+    -fx-spacing: 20px;
+    -fx-padding: 20px;
+}
+
+.anchor-pane {
+    -fx-padding: 20px;
+    -fx-background-color: transparent;
+}
+
+/* -------------------------------------------- */
+/* Header Styles */
+.header {
+    -fx-background-color: #2980b9;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+}
+
+/* -------------------------------------------- */
+/* Custom Dialog/Alert Styling */
+.alert {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+}
+
+.alert .header {
+    -fx-background-color: #2980b9;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+}
+
+.alert .content {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 10px;
+}
+
+/* -------------------------------------------- */
+/* ComboBox Styling */
+.combo-box {
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.combo-box:focused {
+    -fx-border-color: #3498db; /* Blue border when focused */
+}
+
+/* -------------------------------------------- */
+/* Tooltip Styling */
+.tooltip {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-border-radius: 5px;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.SupplierReportController">
+    <TableView fx:id="supplierTable" prefWidth="400" prefHeight="300">
+        <columns>
+            <TableColumn fx:id="supplierNameColumn" text="Supplier Name" prefWidth="200"/>
+            <TableColumn fx:id="totalPurchaseColumn" text="Total Purchase" prefWidth="200"/>
+        </columns>
+    </TableView>
+</AnchorPane>
