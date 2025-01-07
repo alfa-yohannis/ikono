@@ -73,8 +73,8 @@ public class ShippingMerekApp extends Application {
     }
 
     private void loadDataFromDatabase(String keyword) {
-        String url = "jdbc:mysql://localhost:3306/shippingmerek";
-        String username = "root";
+        String url = "jdbc:mysql://localhost:3306/pradita";
+        String username = "alfa";
         String password = "1234";
 
         String query = "SELECT * FROM shippingmerek";
