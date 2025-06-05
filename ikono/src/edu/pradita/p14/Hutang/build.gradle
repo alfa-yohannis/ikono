@@ -1,0 +1,70 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Hibernate
+    implementation 'org.hibernate:hibernate-core:6.2.12.Final'
+    implementation 'jakarta.persistence:jakarta.persistence-api:3.1.0'
+
+    // MySQL Driver
+    implementation 'mysql:mysql-connector-java:8.0.33'
+
+    // JavaFX
+    implementation 'org.openjfx:javafx-controls:20.0.1'
+    implementation 'org.openjfx:javafx-fxml:20.0.1'
+
+    // Unit Testing
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.0'
+
+    // JavaFX UI testing
+    testImplementation 'org.testfx:testfx-core:4.0.18'
+    testImplementation 'org.testfx:testfx-junit5:4.0.18'
+
+    // Mockito
+    testImplementation 'org.mockito:mockito-core:5.11.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.11.0'
+    
+    implementation 'javax.xml.stream:stax-api:1.0-2'
+    
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = 'com.pelunasan.ui.PelunasanHutangView'
+}
+
+javafx {
+    version = "20.0.1"
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+        resources {
+            srcDirs = ['src/test/resources']
+        }
+    }
+}

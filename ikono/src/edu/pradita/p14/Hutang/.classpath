@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="output" path="bin/default"/>
+	<classpathentry output="bin/main" kind="src" path="src/main/java">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry output="bin/main" kind="src" path="src/main/resources">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry output="bin/test" kind="src" path="src/test/java">
+		<attributes>
+			<attribute name="gradle_scope" value="test"/>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry output="bin/test" kind="src" path="src/test/resources">
+		<attributes>
+			<attribute name="gradle_scope" value="test"/>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21/"/>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-fxml/21.0.1/30d71da35c606947afad21a206e0cb4c2a8c9aa2/javafx-fxml-21.0.1-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-fxml/21.0.1/b46291a2451fa6b94e6cc365611156a92d6a05b7/javafx-fxml-21.0.1-win.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-controls/21.0.1/77d225d623f76d41b8a589f482ec3c09b2c47ef9/javafx-controls-21.0.1-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-controls/21.0.1/f97557705aba7fb552fe1bf6e4bdb72bab1924ba/javafx-controls-21.0.1-win.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.hibernate.orm/hibernate-core/6.2.12.Final/aad67a2bc110e92e15b332e66f40db5b9ad4e308/hibernate-core-6.2.12.Final-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.hibernate.orm/hibernate-core/6.2.12.Final/7e7963f3896567c2c37d3a565962607589b0800/hibernate-core-6.2.12.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/jakarta.persistence/jakarta.persistence-api/3.1.0/8d479b8d71750d5c2b8e58034b80231994cba6ec/jakarta.persistence-api-3.1.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/jakarta.persistence/jakarta.persistence-api/3.1.0/66901fa1c373c6aff65c13791cc11da72060a8d6/jakarta.persistence-api-3.1.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.birt.runtime_4.8.0-20180626/4.8.0/4e54a4661644b51e93b44d2085827f01cb7fbfcc/org.eclipse.birt.runtime_4.8.0-20180626-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.birt.runtime_4.8.0-20180626/4.8.0/5fbd2fa6b165bb5b5493b2acdd6832257b97f5de/org.eclipse.birt.runtime_4.8.0-20180626-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/33.0.0-jre/2cca40652185734d5a89349c471a54367fb98067/guava-33.0.0-jre-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/33.0.0-jre/161ba27964a62f241533807a46b8711b13c1d94b/guava-33.0.0-jre.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/21.0.1/a0c336120a01e2c6837e36440cf75ff516449602/javafx-graphics-21.0.1-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/21.0.1/f92cc4656711f2ce8b1928d3b063fd4746ea23e4/javafx-graphics-21.0.1-win.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.mysql/mysql-connector-j/8.0.33/3e86363e438eca05a3c60d26a48caa64d8ceeab/mysql-connector-j-8.0.33-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.mysql/mysql-connector-j/8.0.33/9e64d997873abc4318620264703d3fdb6b02dd5a/mysql-connector-j-8.0.33.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.event_1.4.200.v20180426-0845/4.8.0/a9ccafa2d3f05b61e0338b8fcf080109db48d9aa/org.eclipse.equinox.event_1.4.200.v20180426-0845-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.event_1.4.200.v20180426-0845/4.8.0/afadf668debd29bc7aa2b8ca79b44b95b478d611/org.eclipse.equinox.event_1.4.200.v20180426-0845-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.core.expressions_3.6.100.v20180426-1644/4.8.0/59d9c5c6b516ade1bfdaae4bb5e3fe65d5cf8f71/org.eclipse.core.expressions_3.6.100.v20180426-1644-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.core.expressions_3.6.100.v20180426-1644/4.8.0/e700804ec91f0340abb0646bf53e1e8f7eaad447/org.eclipse.core.expressions_3.6.100.v20180426-1644-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.emf.common_2.14.0.v20180527-1134/4.8.0/401ad8af91b1b65ec25e8bd954ca806843949a05/org.eclipse.emf.common_2.14.0.v20180527-1134-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.emf.common_2.14.0.v20180527-1134/4.8.0/ed9f4439dab6faa107d3abd59bdf9f694eba3450/org.eclipse.emf.common_2.14.0.v20180527-1134-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.osgi_3.13.0.v20180409-1500/4.8.0/6f009f6a87e14739da1f53a0a02355471d940aaa/org.eclipse.osgi_3.13.0.v20180409-1500-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.osgi_3.13.0.v20180409-1500/4.8.0/a71aec640e47045636f9263cc4696af7005d16e2/org.eclipse.osgi_3.13.0.v20180409-1500-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.dom.svg_1.7.0.v201011041433/4.8.0/571060a61c50014e01bc57e8eb84310eab28be04/org.apache.batik.dom.svg_1.7.0.v201011041433-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.dom.svg_1.7.0.v201011041433/4.8.0/1885836fe09a5b0ac7e5a68e6272276a91e62feb/org.apache.batik.dom.svg_1.7.0.v201011041433-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.w3c.dom.svg.extension_1.1.0.v201806261756/4.8.0/19a7bbcd6f6eb763734f31994b131cc51e73194f/org.w3c.dom.svg.extension_1.1.0.v201806261756-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.w3c.dom.svg.extension_1.1.0.v201806261756/4.8.0/78a0bb0c8439978941dbb5837e4230ded1226f4a/org.w3c.dom.svg.extension_1.1.0.v201806261756-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.simpleconfigurator_1.3.0.v20180502-1828/4.8.0/2a5bb1fd7758ee033963ed91f42f08120bba49c5/org.eclipse.equinox.simpleconfigurator_1.3.0.v20180502-1828-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.simpleconfigurator_1.3.0.v20180502-1828/4.8.0/754177f8d7513c39cad9a3b1558dfa9479b12841/org.eclipse.equinox.simpleconfigurator_1.3.0.v20180502-1828-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.frameworkadmin.equinox_1.1.0.v20180512-1128/4.8.0/1267b14b965738cc7f962de6570a1c4b3dbfd214/org.eclipse.equinox.frameworkadmin.equinox_1.1.0.v20180512-1128-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.frameworkadmin.equinox_1.1.0.v20180512-1128/4.8.0/39a9be20d943fe5698287682efb16e6e22aec1bb/org.eclipse.equinox.frameworkadmin.equinox_1.1.0.v20180512-1128-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.lucene.core_6.1.0.v20170814-1820/4.8.0/bef1e662c57b65eccac815965034bd3aa7283813/org.apache.lucene.core_6.1.0.v20170814-1820-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.lucene.core_6.1.0.v20170814-1820/4.8.0/f13cdd106723f1d218b5db90f0ed23ffc7f18619/org.apache.lucene.core_6.1.0.v20170814-1820-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.emf.ecore_2.14.0.v20180529-1144/4.8.0/62d71f45115160b8c1eeade5008e3f849ecb2706/org.eclipse.emf.ecore_2.14.0.v20180529-1144-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.emf.ecore_2.14.0.v20180529-1144/4.8.0/d677e60502d8b39bd4c9fea8159fbf50c917a5f5/org.eclipse.emf.ecore_2.14.0.v20180529-1144-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.transcoder_1.7.0.v201011041433/4.8.0/a240497d916958f5acb952c573979caca9eeb4ec/org.apache.batik.transcoder_1.7.0.v201011041433-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.transcoder_1.7.0.v201011041433/4.8.0/9e0f079fcba2846f95ca0a4d6149f42bad3c50fd/org.apache.batik.transcoder_1.7.0.v201011041433-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.commons.codec_1.9.0.v20170208-1614/4.8.0/e19ca8b94d903eb3b7803acc00fcd9104953ff54/org.apache.commons.codec_1.9.0.v20170208-1614-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.commons.codec_1.9.0.v20170208-1614/4.8.0/65deb3882534cce094a81eda7766684d1e9a0849/org.apache.commons.codec_1.9.0.v20170208-1614-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.sat4j.core_2.3.5.v201308161310/4.8.0/bbcd1f999c3cc6b4f4b74dcba59923ad9a37e86a/org.sat4j.core_2.3.5.v201308161310-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.sat4j.core_2.3.5.v201308161310/4.8.0/b692e87cf65442eff2125f48500ba7150ed7810d/org.sat4j.core_2.3.5.v201308161310-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.ext.awt_1.7.0.v201011041433/4.8.0/e34bdcd6f339134dceca75f452138b3db30cea81/org.apache.batik.ext.awt_1.7.0.v201011041433-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.ext.awt_1.7.0.v201011041433/4.8.0/da2ef7fd772fad91bd881bf1d64ab2b7b6b9b6bb/org.apache.batik.ext.awt_1.7.0.v201011041433-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.frameworkadmin_2.1.0.v20180131-0638/4.8.0/59de82204f597d540fb47c4d52eb486350adb813/org.eclipse.equinox.frameworkadmin_2.1.0.v20180131-0638-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.frameworkadmin_2.1.0.v20180131-0638/4.8.0/f4a775fbb0987173b2892342136575608509f17e/org.eclipse.equinox.frameworkadmin_2.1.0.v20180131-0638-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.w3c.dom.smil_1.0.1.v200903091627/4.8.0/1384ffb206c7d1ee0d85e06bb91340b3b8ca448f/org.w3c.dom.smil_1.0.1.v200903091627-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.w3c.dom.smil_1.0.1.v200903091627/4.8.0/752f7970735ab40b4af6f8be3266b17e468fea86/org.w3c.dom.smil_1.0.1.v200903091627-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.tukaani.xz_1.8.0.v20180207-1613/4.8.0/c0eff87b067e5dce6483ff38f24f01f4e581cd2a/org.tukaani.xz_1.8.0.v20180207-1613-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.tukaani.xz_1.8.0.v20180207-1613/4.8.0/b50fc159568d334ff9c3a712cf6386d3038295d/org.tukaani.xz_1.8.0.v20180207-1613-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.apache.derby_1.2.1.201712071719/4.8.0/4fa2e6403ea7f476f689e66490cc21ed1b315ef/org.eclipse.datatools.connectivity.apache.derby_1.2.1.201712071719-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.apache.derby_1.2.1.201712071719/4.8.0/3d517dde92e96b4abf54ba0a23b2a985aa9afae5/org.eclipse.datatools.connectivity.apache.derby_1.2.1.201712071719-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.preferences_3.7.100.v20180510-1129/4.8.0/ff5b576c897b829ba402c6ce132e423bff607ce/org.eclipse.equinox.preferences_3.7.100.v20180510-1129-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.preferences_3.7.100.v20180510-1129/4.8.0/1d47bf96df31261867e9ed88367790aeb8d143f3/org.eclipse.equinox.preferences_3.7.100.v20180510-1129-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.app_1.3.500.v20171221-2204/4.8.0/308cba5fdca6ada382239d28ce737af5e89eda2b/org.eclipse.equinox.app_1.3.500.v20171221-2204-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.app_1.3.500.v20171221-2204/4.8.0/b2dc328b287382ffe07391b7324e4682e2cff0/org.eclipse.equinox.app_1.3.500.v20171221-2204-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.dom_1.7.1.v201505191845/4.8.0/dbfa3bb36eba2b80dd2b39fa30eaa83789b299a4/org.apache.batik.dom_1.7.1.v201505191845-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.dom_1.7.1.v201505191845/4.8.0/ca2a04a5be488d7d23a84e4b4aa0740047a4c37a/org.apache.batik.dom_1.7.1.v201505191845-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/com.ibm.icu_58.2.0.v20170418-1837/4.8.0/6d9ce6c11fbd5bad785326b0b078785c18dfecd2/com.ibm.icu_58.2.0.v20170418-1837-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/com.ibm.icu_58.2.0.v20170418-1837/4.8.0/64476e506372c6650984155f8ba768042a921a44/com.ibm.icu_58.2.0.v20170418-1837-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/flute/4.8.0/44e481ac5f454cb8f39fe48edf587a53f926c8a5/flute-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/flute/4.8.0/1cd864bd6bbd02ec435bdda1b41bc5104379a0c6/flute-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.emf.ecore.xmi_2.14.0.v20180129-1548/4.8.0/bf4b02bebe57b3b9cea56b7b54936ad2b642b7d3/org.eclipse.emf.ecore.xmi_2.14.0.v20180129-1548-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.emf.ecore.xmi_2.14.0.v20180129-1548/4.8.0/73a4542c504de770e8795d44197d8e0c63cd790a/org.eclipse.emf.ecore.xmi_2.14.0.v20180129-1548-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.oda_3.6.1.201712071719/4.8.0/f7b909fb0409dfe1f0ca504186f7a6745f86e0cd/org.eclipse.datatools.connectivity.oda_3.6.1.201712071719-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.oda_3.6.1.201712071719/4.8.0/8d35c48238abb89976c71eba286e9705da0a4769/org.eclipse.datatools.connectivity.oda_3.6.1.201712071719-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.w3c.css.sac_1.3.1.v200903091627/4.8.0/144765522042f7b1ed13e2e7ff4726c96753c02d/org.w3c.css.sac_1.3.1.v200903091627-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.w3c.css.sac_1.3.1.v200903091627/4.8.0/8a9501900c6ed5d6da577bf9e947011319c8e512/org.w3c.css.sac_1.3.1.v200903091627-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.svggen_1.7.0.v201011041433/4.8.0/57238aeaacb7fb2f657b4c66cb9a9c4c43ff42a2/org.apache.batik.svggen_1.7.0.v201011041433-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.svggen_1.7.0.v201011041433/4.8.0/3c6b19f3044a49f0c5c56f47be2f37f244c50c7e/org.apache.batik.svggen_1.7.0.v201011041433-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.derby_10.11.1.1_v201605202053/4.8.0/dd4258cb5643a68fb826f47f00999398f1d3d65a/org.apache.derby_10.11.1.1_v201605202053-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.derby_10.11.1.1_v201605202053/4.8.0/2b60bf505a014edd8e3c7198f9c0b5761d2a1705/org.apache.derby_10.11.1.1_v201605202053-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.osgi.services_3.7.0.v20180223-1712/4.8.0/9bdc267b641023ef27ed127f795754330a2d065d/org.eclipse.osgi.services_3.7.0.v20180223-1712-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.osgi.services_3.7.0.v20180223-1712/4.8.0/3af1cd8ae7b7def1f75caca8426f2f883711cef3/org.eclipse.osgi.services_3.7.0.v20180223-1712-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.oda.consumer_3.4.1.201712071719/4.8.0/f7556b3f738ec38e749fa14e9ae5ac01d6c07f29/org.eclipse.datatools.connectivity.oda.consumer_3.4.1.201712071719-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.oda.consumer_3.4.1.201712071719/4.8.0/3dd5e6268013451fc738fc4377632e5712464660/org.eclipse.datatools.connectivity.oda.consumer_3.4.1.201712071719-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.core.resources_3.13.0.v20180512-1138/4.8.0/aad7d1ca7f3b7fc24ed5e9bf5b2e270cfd90da5e/org.eclipse.core.resources_3.13.0.v20180512-1138-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.core.resources_3.13.0.v20180512-1138/4.8.0/582ea9b37aafb39450825f82ef3a0f5867e4015c/org.eclipse.core.resources_3.13.0.v20180512-1138-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.simpleconfigurator.manipulator_2.1.0.v20180103-0918/4.8.0/ad76138522bce1cb3b448262868e1b49952ab6a8/org.eclipse.equinox.simpleconfigurator.manipulator_2.1.0.v20180103-0918-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.simpleconfigurator.manipulator_2.1.0.v20180103-0918/4.8.0/54eb1135fb4e6f4553209c4b1f5cb294e76ad443/org.eclipse.equinox.simpleconfigurator.manipulator_2.1.0.v20180103-0918-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.console.profile_1.2.1.201712071719/4.8.0/63bd67d441aa24349a2beabc01168d20fe0a9aa6/org.eclipse.datatools.connectivity.console.profile_1.2.1.201712071719-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.console.profile_1.2.1.201712071719/4.8.0/91a6296468a0d4a131cd7afdf2aa2315d0604da6/org.eclipse.datatools.connectivity.console.profile_1.2.1.201712071719-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.css_1.7.0.v201011041433/4.8.0/c87d7a7185c7c2d11aae191234aa183eb2d0c1e1/org.apache.batik.css_1.7.0.v201011041433-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.css_1.7.0.v201011041433/4.8.0/e32386221b6a4bc7bd9ba3a73bafb56fc85ca373/org.apache.batik.css_1.7.0.v201011041433-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.registry_3.8.0.v20180426-1327/4.8.0/c1e9473d91dd1a246d7292e28230008be8d7d857/org.eclipse.equinox.registry_3.8.0.v20180426-1327-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.registry_3.8.0.v20180426-1327/4.8.0/774f134851bead95050a5ad75cf53fb3d450a9c7/org.eclipse.equinox.registry_3.8.0.v20180426-1327-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/javax.xml.stream_1.0.1.v201004272200/4.8.0/7efbba021d7164e21149e6c94f5f6ab7e4e31a0c/javax.xml.stream_1.0.1.v201004272200-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/javax.xml.stream_1.0.1.v201004272200/4.8.0/80a28be3fa17b4c5a0dac56d53c31665765f2920/javax.xml.stream_1.0.1.v201004272200-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.orbit.mongodb_3.2.2.v20170222-2110/4.8.0/57177744b354756c0b5a8d73f407310e4562f619/org.eclipse.orbit.mongodb_3.2.2.v20170222-2110-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.orbit.mongodb_3.2.2.v20170222-2110/4.8.0/a3a257e84816eccc47718511758bf2a37cb90368/org.eclipse.orbit.mongodb_3.2.2.v20170222-2110-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.core.runtime_3.14.0.v20180417-0825/4.8.0/bafac3e1b81278861cd2f66fb606630ad89c6ade/org.eclipse.core.runtime_3.14.0.v20180417-0825-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.core.runtime_3.14.0.v20180417-0825/4.8.0/5018d6e829f976519ccf94cf4519486b2e93edfb/org.eclipse.core.runtime_3.14.0.v20180417-0825-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.mozilla.javascript_1.7.5.v201504281450/4.8.0/883008a0f8de114e62957c40de281f26b9b492bb/org.mozilla.javascript_1.7.5.v201504281450-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.mozilla.javascript_1.7.5.v201504281450/4.8.0/dbd067fe2a3c4caec6326ec366b505b76fe73743/org.mozilla.javascript_1.7.5.v201504281450-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.update.configurator_3.4.0.v20180512-1141/4.8.0/a679082986918177cee30f6c26a8641b176c3e1c/org.eclipse.update.configurator_3.4.0.v20180512-1141-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.update.configurator_3.4.0.v20180512-1141/4.8.0/bcbc9b6e58185d142cc8c04133f9443673bd3c6/org.eclipse.update.configurator_3.4.0.v20180512-1141-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.xerces_2.9.0.v201101211617/4.8.0/3adec773c5991375625aa06331e1f6fe4034926b/org.apache.xerces_2.9.0.v201101211617-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.xerces_2.9.0.v201101211617/4.8.0/106d733bb925686a566de5920e9fa7ae373ae532/org.apache.xerces_2.9.0.v201101211617-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.dbdefinition.genericJDBC_1.2.1.201712071719/4.8.0/ceb47bd36016a4902a8ec9a6b4c7c13cd3548af5/org.eclipse.datatools.connectivity.dbdefinition.genericJDBC_1.2.1.201712071719-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.dbdefinition.genericJDBC_1.2.1.201712071719/4.8.0/b960259b65866ff92f95d4eb6ea7c674ffffb893/org.eclipse.datatools.connectivity.dbdefinition.genericJDBC_1.2.1.201712071719-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.w3c.dom.svg_1.1.0.v201011041433/4.8.0/91cb88d9388f072cbc401a718cfede01e9d61a45/org.w3c.dom.svg_1.1.0.v201011041433-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.w3c.dom.svg_1.1.0.v201011041433/4.8.0/ea6041ad2cce77784d6b33e0ce01dacd4f545b28/org.w3c.dom.svg_1.1.0.v201011041433-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.oda.design_3.5.1.201712071719/4.8.0/d64d8eca69e179eac00e8fc94db193982af0f541/org.eclipse.datatools.connectivity.oda.design_3.5.1.201712071719-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.oda.design_3.5.1.201712071719/4.8.0/eaa4dd02f795982892532f7f878e6d10133c356f/org.eclipse.datatools.connectivity.oda.design_3.5.1.201712071719-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/javax.xml_1.3.4.v201005080400/4.8.0/442d78d365419d72dbb85efdbbcf47026d89592b/javax.xml_1.3.4.v201005080400-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/javax.xml_1.3.4.v201005080400/4.8.0/2c04a38e2b05f5ee4ca2556906c10c162fcabd06/javax.xml_1.3.4.v201005080400-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.sat4j.pb_2.3.5.v201404071733/4.8.0/55dc6e5dff2ff294321d1086f9c0e1a217925ea5/org.sat4j.pb_2.3.5.v201404071733-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.sat4j.pb_2.3.5.v201404071733/4.8.0/b3350e59a5e2a8a36b8c631b6e1cf0627cb2df78/org.sat4j.pb_2.3.5.v201404071733-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.sqm.core_1.4.1.201712071719/4.8.0/332db60c2f6ef77bcbecf87936b4c0c985bcd79c/org.eclipse.datatools.connectivity.sqm.core_1.4.1.201712071719-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.sqm.core_1.4.1.201712071719/4.8.0/555cbd966a9398d96006640f7fc0eff75843e56d/org.eclipse.datatools.connectivity.sqm.core_1.4.1.201712071719-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.oda.profile_3.4.1.201712071719/4.8.0/37ce604149e2353ad32919f634484b9c9f15bdbb/org.eclipse.datatools.connectivity.oda.profile_3.4.1.201712071719-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.oda.profile_3.4.1.201712071719/4.8.0/4abb35b5dee9e5121b91a88692b49225dbce6802/org.eclipse.datatools.connectivity.oda.profile_3.4.1.201712071719-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.help_3.8.100.v20180512-1136/4.8.0/999bae17c50e394a48a8e087fb5c977cb9db297f/org.eclipse.help_3.8.100.v20180512-1136-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.help_3.8.100.v20180512-1136/4.8.0/7b5c427677036a4ff54e621a2e478b1ea357d8e2/org.eclipse.help_3.8.100.v20180512-1136-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.emf.ecore.change_2.12.0.v20180125-1130/4.8.0/ddb9878ac5a77646bd68bf20e0f3592c5101a2bd/org.eclipse.emf.ecore.change_2.12.0.v20180125-1130-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.emf.ecore.change_2.12.0.v20180125-1130/4.8.0/985bd3522e4e6a07fe645ba4798136d5fdf8c6a1/org.eclipse.emf.ecore.change_2.12.0.v20180125-1130-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.poi_3.9.0.v201405241750/4.8.0/4f502c60d94377b00d07c59fa81966abb54a0224/org.apache.poi_3.9.0.v201405241750-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.poi_3.9.0.v201405241750/4.8.0/27955afc1de66091c40c6c622c889931ffe69bc5/org.apache.poi_3.9.0.v201405241750-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.commons.logging_1.1.1.v201101211721/4.8.0/76fd9e9bb4f2b33adce95b73f1dc061a0454c83c/org.apache.commons.logging_1.1.1.v201101211721-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.commons.logging_1.1.1.v201101211721/4.8.0/7c8ef9aac68753c9a6fb3a79431bbe8dc3d55d9/org.apache.commons.logging_1.1.1.v201101211721-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.lucene.queryparser_6.1.0.v20161115-1612/4.8.0/6598bc7037f438e5d093669edc8f6935d928ea85/org.apache.lucene.queryparser_6.1.0.v20161115-1612-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.lucene.queryparser_6.1.0.v20161115-1612/4.8.0/7c74f38eba594ce052155f0cde11a76429909f8b/org.apache.lucene.queryparser_6.1.0.v20161115-1612-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.w3c.dom.events_3.0.0.draft20060413_v201105210656/4.8.0/bad5986ab3ca84013d2c6febf4dc6255e2f5a35/org.w3c.dom.events_3.0.0.draft20060413_v201105210656-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.w3c.dom.events_3.0.0.draft20060413_v201105210656/4.8.0/381ff9d23c3d8d92b420ea84e22dbeb0c6fe20d4/org.w3c.dom.events_3.0.0.draft20060413_v201105210656-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.xml.resolver_1.2.0.v201005080400/4.8.0/dc35d83f8e5e28c685085fdd12b4b467f3c4260e/org.apache.xml.resolver_1.2.0.v201005080400-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.xml.resolver_1.2.0.v201005080400/4.8.0/d17504c7928ebbf8959a1302d327973e878e666f/org.apache.xml.resolver_1.2.0.v201005080400-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.core.jobs_3.10.0.v20180427-1454/4.8.0/ef81747c2ce7925dd8c84182cb59a4623f246567/org.eclipse.core.jobs_3.10.0.v20180427-1454-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.core.jobs_3.10.0.v20180427-1454/4.8.0/f7c872a52c86a304a17f6d2902c645e98cfa2dcc/org.eclipse.core.jobs_3.10.0.v20180427-1454-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.security_1.2.400.v20171221-2204/4.8.0/b000dc6fe61fe3cacec9605b9773b8dbbfe4a281/org.eclipse.equinox.security_1.2.400.v20171221-2204-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.security_1.2.400.v20171221-2204/4.8.0/6c4862a7e3ed0833cb8e37e1ea8c409f31110a6f/org.eclipse.equinox.security_1.2.400.v20171221-2204-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.bridge_1.7.0.v201011041433/4.8.0/688b3d649583c2da1c7fb9d8444546d4fb848955/org.apache.batik.bridge_1.7.0.v201011041433-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.bridge_1.7.0.v201011041433/4.8.0/1de0929e350ef5dfbed94698b8c8429783b82fc9/org.apache.batik.bridge_1.7.0.v201011041433-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.parser_1.7.0.v201011041433/4.8.0/2c21d7f5ae987c83f37e0bb0f9754b50b6af98eb/org.apache.batik.parser_1.7.0.v201011041433-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.parser_1.7.0.v201011041433/4.8.0/74f46ea15f62de313f5df4e708040591627e8cf2/org.apache.batik.parser_1.7.0.v201011041433-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.core.contenttype_3.7.0.v20180426-1644/4.8.0/d26fc9284cd7a9338a525d6257a6e9ea4ca895a2/org.eclipse.core.contenttype_3.7.0.v20180426-1644-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.core.contenttype_3.7.0.v20180426-1644/4.8.0/ee111d57c3fb5fd287f0dbadd3e8bb24f41ba710/org.eclipse.core.contenttype_3.7.0.v20180426-1644-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.core.filesystem_1.7.100.v20180304-1102/4.8.0/31c84fc1cbfeb85ad927e4faa27d189ec1e512f8/org.eclipse.core.filesystem_1.7.100.v20180304-1102-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.core.filesystem_1.7.100.v20180304-1102/4.8.0/b3ad92ecd4bc57e4c4e6fd8184f2f79ab5bb7aa1/org.eclipse.core.filesystem_1.7.100.v20180304-1102-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.xml_1.7.0.v201011041433/4.8.0/27c14c65851cabb61970720ab302b68045e5f6de/org.apache.batik.xml_1.7.0.v201011041433-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.xml_1.7.0.v201011041433/4.8.0/8ad5a51ebb453c3eb01f632228e510ad69092e70/org.apache.batik.xml_1.7.0.v201011041433-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.ds_1.5.100.v20171221-2204/4.8.0/accfbee2a5f4828dd242f24e0dcc553949208027/org.eclipse.equinox.ds_1.5.100.v20171221-2204-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.ds_1.5.100.v20171221-2204/4.8.0/13df1340de7939b7f405dbc99b7b8b637c8d4529/org.eclipse.equinox.ds_1.5.100.v20171221-2204-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.util_1.7.0.v201011041433/4.8.0/42761e28adddd8b7fd28bba68d39efa737a4e925/org.apache.batik.util_1.7.0.v201011041433-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.util_1.7.0.v201011041433/4.8.0/3d22886b55ca192cd7b0d2ae32d764bef2351ef2/org.apache.batik.util_1.7.0.v201011041433-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.oda.flatfile_3.3.1.201712071719/4.8.0/8dcbb2c420b064f7f7cae28eabc5ac5967ca22f7/org.eclipse.datatools.connectivity.oda.flatfile_3.3.1.201712071719-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.oda.flatfile_3.3.1.201712071719/4.8.0/2a33ea204aa4408df10f3595f579e84f705de804/org.eclipse.datatools.connectivity.oda.flatfile_3.3.1.201712071719-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.ext.awt.extension_1.7.0.v201806261756/4.8.0/4a27d1a32a6e45c29d861cce01be9b1cf78e3d6c/org.apache.batik.ext.awt.extension_1.7.0.v201806261756-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.ext.awt.extension_1.7.0.v201806261756/4.8.0/c2bb92cd4b75cc138485389fd2346d11325776c9/org.apache.batik.ext.awt.extension_1.7.0.v201806261756-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/javax.wsdl_1.5.1.v201012040544/4.8.0/ba6aaf02706e22fd1bb8fbe6399d083af214100e/javax.wsdl_1.5.1.v201012040544-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/javax.wsdl_1.5.1.v201012040544/4.8.0/f261e2113931ef8ff2bcc4a9f85cdc7ceb9a6b59/javax.wsdl_1.5.1.v201012040544-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.osgi.util_3.5.0.v20180219-1511/4.8.0/d37f27d756506d5efe24672d96ca80f358f52d7e/org.eclipse.osgi.util_3.5.0.v20180219-1511-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.osgi.util_3.5.0.v20180219-1511/4.8.0/2a4a95a956dde4790668d25e5993472d60456b20/org.eclipse.osgi.util_3.5.0.v20180219-1511-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity_1.14.1.201712071719/4.8.0/6d06edeaca4b7d029a745be767e2755dea5c53ff/org.eclipse.datatools.connectivity_1.14.1.201712071719-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity_1.14.1.201712071719/4.8.0/41951a87a70b2fe5e735ccb210d3195e71de8531/org.eclipse.datatools.connectivity_1.14.1.201712071719-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.felix.scr_2.0.14.v20180117-1452/4.8.0/5c6a5825eca60772e3e340fbf33c9199d422b425/org.apache.felix.scr_2.0.14.v20180117-1452-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.felix.scr_2.0.14.v20180117-1452/4.8.0/8f5cb662aa26062eda522835c9848b0854fef34c/org.apache.felix.scr_2.0.14.v20180117-1452-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.apache.derby.dbdefinition_1.2.1.201712071719/4.8.0/6b94eb0fcead723f61cb37935c04d7bf411a97b9/org.eclipse.datatools.connectivity.apache.derby.dbdefinition_1.2.1.201712071719-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.apache.derby.dbdefinition_1.2.1.201712071719/4.8.0/c06ceb5be7f01ecdc951534073d23e4cbc47af72/org.eclipse.datatools.connectivity.apache.derby.dbdefinition_1.2.1.201712071719-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.db.generic_1.2.1.201712071719/4.8.0/b87c38e0f11d3504e1001668cf9e76d5e9753567/org.eclipse.datatools.connectivity.db.generic_1.2.1.201712071719-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.datatools.connectivity.db.generic_1.2.1.201712071719/4.8.0/f85c62925fa8e16918903e4eaa2cabe3130acb99/org.eclipse.datatools.connectivity.db.generic_1.2.1.201712071719-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.lucene.analyzers-common_6.1.0.v20161115-1612/4.8.0/58e12e07d9c70c72ea099396facfc3d0f2f96f39/org.apache.lucene.analyzers-common_6.1.0.v20161115-1612-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.lucene.analyzers-common_6.1.0.v20161115-1612/4.8.0/cdf4dd0fdef1bdf9b141ba881172f2db3d67b990/org.apache.lucene.analyzers-common_6.1.0.v20161115-1612-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.xml.serializer_2.7.1.v201005080400/4.8.0/e2a8104d761db48caa2e6fff6a3c6ecc8e37ffd/org.apache.xml.serializer_2.7.1.v201005080400-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.xml.serializer_2.7.1.v201005080400/4.8.0/d0bd0a3d8db9f330a803937c7283904fd4a5886a/org.apache.xml.serializer_2.7.1.v201005080400-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/net.sourceforge.lpg.lpgjavaruntime_1.1.0.v201004271650/4.8.0/ea31a0bf39b7ccb525d93cc94de8c0137b057995/net.sourceforge.lpg.lpgjavaruntime_1.1.0.v201004271650-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/net.sourceforge.lpg.lpgjavaruntime_1.1.0.v201004271650/4.8.0/97618cf4a8013b553caaf52b2f2e1acd1696c3d/net.sourceforge.lpg.lpgjavaruntime_1.1.0.v201004271650-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.util.gui_1.7.0.v200903091627/4.8.0/979804fec0ddb40667d41aaefd70b78828473f44/org.apache.batik.util.gui_1.7.0.v200903091627-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.apache.batik.util.gui_1.7.0.v200903091627/4.8.0/44eed20e2aee27a9b092457015c96c5ebf676bb9/org.apache.batik.util.gui_1.7.0.v200903091627-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/com.lowagie.text_2.1.7.v201004222200/4.8.0/193fba1bdd043bb44a1859e2ad67b4be14c920f3/com.lowagie.text_2.1.7.v201004222200-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/com.lowagie.text_2.1.7.v201004222200/4.8.0/901bfb4fa0b2b4e6fb163a953070adb006335a54/com.lowagie.text_2.1.7.v201004222200-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.common_3.10.0.v20180412-1130/4.8.0/9c9034651282c068c2060ae8e6cc451e8afe9e5a/org.eclipse.equinox.common_3.10.0.v20180412-1130-4.8.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.innoventsolutions.birt.runtime/org.eclipse.equinox.common_3.10.0.v20180412-1130/4.8.0/8758736e97bb84bf59f73013073abdc44a4e5602/org.eclipse.equinox.common_3.10.0.v20180412-1130-4.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.2/6acdafcf2dfc3b548e59dd3a4b454552aeb6ff65/failureaccess-1.0.2-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.2/c4a06a64e650562f30b7bf9aaec1bfed43aca12b/failureaccess-1.0.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/b19b5927c2c25b6c70f093767041e641ae0b1b35/jsr305-3.0.2-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.41.0/bbd6dfcb5998fdda708d32c6c5b5a570f9f788e8/checker-qual-3.41.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.41.0/8be6df7f1e9bccb19f8f351b3651f0bac2f5e0c/checker-qual-3.41.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.23.0/532ee2653e231d34f2beef55b1738fb92dc3be0e/error_prone_annotations-2.23.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.23.0/43a27853b6c7d54893e0b1997c2c778c347179eb/error_prone_annotations-2.23.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/2.8/74fb66e276fc42784d884d51f841e35232bc90de/j2objc-annotations-2.8-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/2.8/c85270e307e7b822f1086b93689124b89768e273/j2objc-annotations-2.8.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/21.0.1/d1582c81de380bc7589244aa55914c6f66f6ac28/javafx-base-21.0.1-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/21.0.1/adb6ee2aa7dff77286a0673dd0c001e318e7224/javafx-base-21.0.1-win.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/jakarta.transaction/jakarta.transaction-api/2.0.1/660c982b9f5a7c8a6613c84f6e1c8b9221a4c574/jakarta.transaction-api-2.0.1-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/jakarta.transaction/jakarta.transaction-api/2.0.1/51a520e3fae406abb84e2e1148e6746ce3f80a1a/jakarta.transaction-api-2.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.21.9/ba3f8d6e858362891791bf00c62fc671849fbc4d/protobuf-java-3.21.9-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.21.9/ed1240d9231044ce6ccf1978512f6e44416bb7e7/protobuf-java-3.21.9.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.jboss.logging/jboss-logging/3.5.0.Final/ad075152c4716d3d2b285444551ca88c8f996bf1/jboss-logging-3.5.0.Final-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.jboss.logging/jboss-logging/3.5.0.Final/c19307cc11f28f5e2679347e633a3294d865334d/jboss-logging-3.5.0.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.hibernate.common/hibernate-commons-annotations/6.0.6.Final/113904346d97dbdf52883c90ef1ccd0bb8ffb74d/hibernate-commons-annotations-6.0.6.Final-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.hibernate.common/hibernate-commons-annotations/6.0.6.Final/77a5f94b56d49508e0ee334751db5b78e5ccd50c/hibernate-commons-annotations-6.0.6.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/io.smallrye/jandex/3.0.5/cdd9471c65c9cfce10f82004799b414ccc5c15c/jandex-3.0.5-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/io.smallrye/jandex/3.0.5/c548a4871b552292dbdd65409d3fda145c8925c1/jandex-3.0.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.fasterxml/classmate/1.5.1/504edac38ff03cc5ce1d0391abb1416ffad58a99/classmate-1.5.1-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.fasterxml/classmate/1.5.1/3fe0bed568c62df5e89f4f174c101eab25345b6c/classmate-1.5.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.14.7/8c13f18c950acdd703deae7249f1392f66b6c334/byte-buddy-1.14.7-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.14.7/34efde5f0bb93afc94aaf9d400521899c4806873/byte-buddy-1.14.7.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/4.0.2/d8ac8efda28069eab004c99cc43202cafe8184a4/jaxb-runtime-4.0.2-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/4.0.2/e4e4e0c5b0d42054d00dc4023901572a60d368c7/jaxb-runtime-4.0.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-core/4.0.2/ce7047bbe21999c85e6c6ea51f2ea555b5f9dfa4/jaxb-core-4.0.2-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-core/4.0.2/8c29249f6c10f4ee08967783831580b0f5c5360/jaxb-core-4.0.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api/4.0.0/b8e46353907cfaccef843fff62d72476f8ad88ce/jakarta.xml.bind-api-4.0.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api/4.0.0/bbb399208d288b15ec101fa4fcfc4bd77cedc97a/jakarta.xml.bind-api-4.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/jakarta.inject/jakarta.inject-api/2.0.1/569d6c5f18d6ff83c82152d1870cf0faf830c594/jakarta.inject-api-2.0.1-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/jakarta.inject/jakarta.inject-api/2.0.1/4c28afe1991a941d7702fe1362c365f0a8641d1e/jakarta.inject-api-2.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4-runtime/4.10.1/a5214c71b2fa1d776d69674bf75eeb3f1fee8a62/antlr4-runtime-4.10.1-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4-runtime/4.10.1/10839f875928f59c622d675091d51a43ea0dc5f7/antlr4-runtime-4.10.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.eclipse.angus/angus-activation/2.0.0/cb50d6abc1e0491aa2e33f1f2fb54cd15b8bef43/angus-activation-2.0.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.eclipse.angus/angus-activation/2.0.0/72369f4e2314d38de2dcbb277141ef0226f73151/angus-activation-2.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/jakarta.activation/jakarta.activation-api/2.1.1/cd6029d4d4362e4ab559a7840098df0ee3586964/jakarta.activation-api-2.1.1-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/jakarta.activation/jakarta.activation-api/2.1.1/88c774ab863a21fb2fc4219af95379fafe499a31/jakarta.activation-api-2.1.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/txw2/4.0.2/6f202b9fd5ced3d369fb5d5f58cbf12bc568cfd7/txw2-4.0.2-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/txw2/4.0.2/24e167be69c29ebb7ee0a3b1f9b546f1dfd111fc/txw2-4.0.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons-runtime/4.1.1/e7ed552d83b79b0b36d8c7cd2f64e523110795d3/istack-commons-runtime-4.1.1-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons-runtime/4.1.1/9b3769c76235bc283b060da4fae2318c6d53f07e/istack-commons-runtime-4.1.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-params/5.10.0/6c4fb5ab59bbc63438f3c618d769c4eddd65654/junit-jupiter-params-5.10.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-params/5.10.0/9041c7365495a897a64782ea5a6fdb99dab1814e/junit-jupiter-params-5.10.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.10.0/551bc33910fee1c601da155a77f67f70f66f6a27/junit-jupiter-api-5.10.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.10.0/2fe4ba3d31d5067878e468c96aa039005a9134d3/junit-jupiter-api-5.10.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.10.0/74f2f9694d30effa2caff679b9f02ba832cbd1ac/junit-platform-commons-1.10.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.10.0/d533ff2c286eaf963566f92baf5f8a06628d2609/junit-platform-commons-1.10.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter/5.10.0/4e79ee610aff59d79b5f229252ded392b7d48fd1/junit-jupiter-5.10.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter/5.10.0/8fea1d9c58b2156f1b998f2f18da04bc9e087f74/junit-jupiter-5.10.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.testfx/testfx-junit5/4.0.18/32d3b420c512da52689701db23fc7d9fa1d80b63/testfx-junit5-4.0.18-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.testfx/testfx-junit5/4.0.18/727ee350ffb34dff07679eb46e8aab320346fe2d/testfx-junit5-4.0.18.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.testfx/testfx-core/4.0.18/26eb0d0d222c35452282eec04d0fdc0f60a7c5d9/testfx-core-4.0.18-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.testfx/testfx-core/4.0.18/1dabed42035413baaf9e90ef5ab66d7c9a3b3a17/testfx-core-4.0.18.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.opentest4j/opentest4j/1.3.0/afb8ff23cffb021c56f333953aebfe6e8818568e/opentest4j-1.3.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.opentest4j/opentest4j/1.3.0/152ea56b3a72f655d4fd677fc0ef2596c3dd5e6e/opentest4j-1.3.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.apiguardian/apiguardian-api/1.1.2/e0787a997746ac32639e0bf3cb27af8dce8a3428/apiguardian-api-1.1.2-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.apiguardian/apiguardian-api/1.1.2/a231e0d844d2721b0fa1b238006d15c6ded6842a/apiguardian-api-1.1.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.10.0/4fe7a5334478bc8e93bbcb471e24c0fa13520ea7/junit-jupiter-engine-5.10.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.10.0/90587932d718fc51a48112d33045a18476c542ad/junit-jupiter-engine-5.10.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-launcher/1.10.0/62c17608a285a6246ed1f6c8112eddd075c0a957/junit-platform-launcher-1.10.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-launcher/1.10.0/89a1922534ed102be1fb2a8c0b2c6151297a12bf/junit-platform-launcher-1.10.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.10.0/886c197f5fcfe9eaf0d1dde20aa1bd3abd653f44/junit-platform-engine-1.10.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.10.0/276c4edcf64fabb5a139fa7b4f99330d7a93b804/junit-platform-engine-1.10.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest/2.1/aa6763235632b77fd9245c850b6a7dc09382314c/hamcrest-2.1-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest/2.1/9420ba32c29217b54eebd26ff7f9234d31c3fbb2/hamcrest-2.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.assertj/assertj-core/3.13.2/616a8ca81b9a1a58e3c8cd8c5d7395eb548ce57/assertj-core-3.13.2-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.assertj/assertj-core/3.13.2/bb7b963fe752f69f055df0025691eceb83ce0c5d/assertj-core-3.13.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.osgi/org.osgi.core/6.0.0/347531f45363ed10e222b03231d49bb7df016a4d/org.osgi.core-6.0.0-sources.jar" kind="lib" path="C:/Users/USER/.gradle/caches/modules-2/files-2.1/org.osgi/org.osgi.core/6.0.0/c49acdc9ac62cf69ee49cb6f1905b4fdb79ea5c/org.osgi.core-6.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+</classpath>
