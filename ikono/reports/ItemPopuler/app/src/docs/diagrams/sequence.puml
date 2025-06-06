@@ -1,0 +1,88 @@
+@startuml
+title Diagram Sekuens: Skenario Sukses Memuat Laporan
+
+actor Pengguna
+
+' Definisikan partisipan/objek yang terlibat
+participant ":App" as App
+participant ":LoggingReportServiceDecorator" as Decorator
+participant ":ReportService" as Service
+participant ":HibernateUtil" as Util
+participant ":Session" as HSession
+participant ":Query" as HQuery
+
+Pengguna -> App: Memilih tanggal & klik tombol "Load Report"
+activate App
+
+App -> App: panggil handleLoadReport()
+activate App #FFBBBB
+App -> App: itemReports.clear()
+
+' App memanggil service (yang sebenarnya adalah Decorator)
+App -> Decorator: getPopularItems(startDate, endDate)
+activate Decorator
+
+' Decorator melakukan logging lalu mendelegasikan
+Decorator -> Decorator: (log "Mencoba memuat laporan...")
+Decorator -> Service: getPopularItems(startDate, endDate)
+activate Service
+
+' Service berinteraksi dengan Hibernate
+Service -> Util: getInstance()
+activate Util
+Service <-- Util: hibernateUtilInstance
+deactivate Util
+
+Service -> Util: getSessionFactory()
+activate Util
+Service <-- Util: sessionFactory
+deactivate Util
+
+Service -> HSession: session = sessionFactory.openSession()
+activate HSession
+
+Service -> HSession: beginTransaction()
+
+' Eksekusi Query
+Service -> HQuery: createQuery(hql)
+activate HQuery
+Service -> HQuery: setParameter("startDate", ...)
+Service -> HQuery: setParameter("endDate", ...)
+Service -> HQuery: getResultList()
+
+' Database (melalui Query) mengembalikan hasil
+HQuery --> Service: List<Object[]> results
+deactivate HQuery
+
+' Service memproses hasil
+loop untuk setiap baris di 'results'
+    Service -> Service: new ItemReport(productName, quantity)
+end
+
+' Menyelesaikan transaksi
+Service -> HSession: getTransaction().commit()
+Service -> HSession: close()
+deactivate HSession
+
+' Mengembalikan data ke Decorator
+Service --> Decorator: ObservableList<ItemReport> reportData
+deactivate Service
+
+' Decorator melakukan logging lagi dan mengembalikan data ke App
+Decorator -> Decorator: (log "Berhasil memuat laporan...")
+Decorator --> App: reportData
+deactivate Decorator
+
+' App mengupdate UI
+App -> App: itemReports.addAll(reportData)
+note right of App
+  Tampilan tabel (TableView) akan
+  otomatis diperbarui karena
+  mengamati perubahan pada
+  itemReports.
+end note
+
+deactivate App #FFBBBB
+deactivate App
+
+@enduml

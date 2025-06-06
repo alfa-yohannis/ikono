@@ -1,0 +1,64 @@
+@startuml
+title Aktivitas Mencetak Laporan (dengan Pola Strategy)
+
+' Menggunakan swimlanes untuk memisahkan tanggung jawab
+|Pengguna|
+start
+:Menekan salah satu tombol cetak;
+
+if (Tombol "Print Report (UI)"?) then (ya)
+  |App|
+  :Mengatur strategi cetak ke\n'JavaFxPrinterStrategy';
+  note left
+    reportPrinter.setPrintStrategy(javaFxStrategy)
+  end note
+
+else (Tombol "Print to Console"?)
+  |App|
+  :Mengatur strategi cetak ke\n'ConsolePrintStrategy';
+  note right
+    reportPrinter.setPrintStrategy(consoleStrategy)
+  end note
+endif
+
+' Alur berlanjut di swimlane App
+|App|
+:Memanggil `handlePrintReport()`;
+
+if (Daftar laporan `itemReports` kosong?) then (ya)
+  :Tampilkan notifikasi "Tidak ada data";
+  |Pengguna|
+  stop
+else (tidak)
+  |App|
+  :Memanggil `reportPrinter.print(reportTable, itemReports)`;
+
+  |ReportPrinter|
+  :Menerima panggilan `print()`;
+  :Mendelegasikan tugas ke strategi yang aktif
+  (memanggil `printStrategy.print()`);
+
+  ' Eksekusi didelegasikan ke strategi yang sesuai
+  |PrintStrategy|
+  partition "Eksekusi Strategi Cetak" {
+    if (Strategi aktif adalah 'JavaFxPrinterStrategy'?) then (ya)
+      :Menampilkan dialog cetak JavaFX;
+      if (Pengguna mengkonfirmasi cetak?) then (ya)
+        :Mencetak halaman ke printer fisik;
+        :Menampilkan notifikasi sukses/gagal via `AlertHandler`;
+      else (tidak)
+        ' Tidak ada aksi (pencetakan dibatalkan)
+      endif
+    else (Strategi aktif adalah 'ConsolePrintStrategy'?)
+      :Mencetak header laporan ke konsol;
+      :Loop melalui setiap item di `itemReports`
+      dan mencetak detailnya ke konsol;
+      :Mencetak footer laporan ke konsol;
+      |App|
+      :Menampilkan notifikasi "Cetak ke konsol berhasil";
+    endif
+  }
+  |Pengguna|
+  stop
+endif
+@enduml

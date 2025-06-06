@@ -1,0 +1,45 @@
+// build.gradle
+
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+    id 'io.freefair.plantuml' version '8.13.1' // Plugin PlantUML ditambahkan
+}
+
+// Sintaks yang direkomendasikan untuk group dan version
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = "22" // Ganti dengan versi JavaFX Anda
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.web', 'javafx.media', 'javafx.swing' ]
+}
+
+dependencies {
+    implementation 'org.openjfx:javafx-controls:21' // Use your JavaFX version
+    implementation 'org.openjfx:javafx-fxml:21'
+
+    implementation 'org.hibernate.orm:hibernate-core:6.5.2.Final'
+    implementation 'com.mysql:mysql-connector-j:8.4.0'
+
+    // --- Dependensi Pengujian ---
+    testImplementation platform('org.junit:junit-bom:5.11.0') // Pastikan versi terbaru
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.mockito:mockito-core:5.11.0'       // Versi terbaru Mockito
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.11.0' // Integrasi Mockito dengan JUnit 5
+} // Akhir dari blok dependencies
+
+// Blok application harus berada di level atas, bukan di dalam dependencies
+application {
+    mainClass = 'org.example.App'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+

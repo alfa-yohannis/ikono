@@ -1,0 +1,83 @@
+@startuml
+title Diagram Kelas Aplikasi Laporan (Versi Sederhana)
+
+skinparam classAttributeIconSize 0
+skinparam defaultFontName Arial
+skinparam shadowing false
+
+' --- Interfaces ---
+interface ReportServiceInterface {
+  + getPopularItems(startDate, endDate)
+}
+
+interface "PrintStrategy<T>" as PrintStrategy {
+  + print(table, data)
+}
+
+' --- Kelas-kelas ---
+class App
+class ItemReport
+class Product <<Entity>>
+class Transaction <<Entity>>
+class AlertHandler
+class HibernateUtil <<Singleton>>
+class ReportService
+class LoggingReportServiceDecorator
+class ReportPrinter
+class JavaFxPrinterStrategy
+class ConsolePrintStrategy
+
+
+' --- Detail dan Relasi ---
+
+class App {
+  - reportService: ReportServiceInterface
+  - reportPrinter: ReportPrinter
+  - alertHandler: AlertHandler
+  --
+  + start(primaryStage)
+  - handleLoadReport()
+  - handlePrintReport()
+}
+
+class ItemReport {
+  - productName: String
+  - quantity: int
+}
+
+class AlertHandler {
+  + showAlert(alertType, title, message)
+}
+
+class HibernateUtil <<Singleton>> {
+  - {static} instance: HibernateUtil
+  --
+  + {static} getInstance(): HibernateUtil
+  + getSessionFactory()
+}
+
+' --- Service dan Decorator ---
+ReportService ..|> ReportServiceInterface
+LoggingReportServiceDecorator ..|> ReportServiceInterface
+LoggingReportServiceDecorator o--> "1" ReportServiceInterface : "decorates"
+
+' --- Printer dan Strategy ---
+ReportPrinter o--> "1" PrintStrategy : "currentStrategy"
+JavaFxPrinterStrategy ..|> PrintStrategy
+ConsolePrintStrategy ..|> PrintStrategy
+JavaFxPrinterStrategy ..> AlertHandler : uses
+
+' --- Relasi Antar Komponen Utama ---
+App o--> ReportServiceInterface
+App o--> ReportPrinter
+App o--> AlertHandler
+App ..> ItemReport : uses
+
+' --- Ketergantungan Service ---
+ReportService ..> HibernateUtil : uses
+ReportService ..> ItemReport : creates
+
+' --- Relasi Entitas ---
+Transaction "many" --o "1" Product : product
+
+@enduml
