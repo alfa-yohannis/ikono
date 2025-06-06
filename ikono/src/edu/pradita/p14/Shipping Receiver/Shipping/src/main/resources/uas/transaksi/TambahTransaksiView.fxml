@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<VBox alignment="TOP_CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uas.transaksi.TambahTransaksiController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <Label text="Form Tambah Pengiriman Baru" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+   <GridPane hgap="10" vgap="5">
+      <columnConstraints>
+         <ColumnConstraints prefWidth="120" />
+         <ColumnConstraints prefWidth="250" />
+      </columnConstraints>
+
+      <Label text="Kode Pengiriman:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+      <TextField fx:id="txtShipmentCode" promptText="Otomatis atau Manual" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+      <Label text="Pengirim:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+      <ComboBox fx:id="cbPengirim" prefWidth="250" promptText="Pilih Pengirim" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+      <Button text="Tambah Pengirim Baru..." onAction="#handleOpenTambahPengirim" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+      <Label text="Penerima:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+      <ComboBox fx:id="cbPenerima" prefWidth="250" promptText="Pilih Penerima" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+      <Button text="Tambah Penerima Baru..." onAction="#handleOpenTambahPenerima" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+
+      <Label text="Merek Pengiriman:" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+      <ComboBox fx:id="cbMerekPengiriman" prefWidth="250" promptText="Pilih Merek" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+
+      <Label text="Tanggal Pengiriman:" GridPane.rowIndex="6" GridPane.columnIndex="0" />
+      <DatePicker fx:id="dpTanggalPengiriman" prefWidth="250" GridPane.rowIndex="6" GridPane.columnIndex="1" />
+
+      <Label text="Status:" GridPane.rowIndex="7" GridPane.columnIndex="0" />
+      <ComboBox fx:id="cbStatus" prefWidth="250" promptText="Pilih Status" GridPane.rowIndex="7" GridPane.columnIndex="1">
+          <items>
+              <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="pending" />
+                  <String fx:value="shipped" />
+                  <String fx:value="delivered" />
+                  <String fx:value="cancelled" />
+              </FXCollections>
+          </items>
+      </ComboBox>
+
+      <Button text="Simpan Pengiriman" onAction="#handleSimpanPengiriman" GridPane.rowIndex="8" GridPane.columnIndex="1" alignment="CENTER_RIGHT" />
+   </GridPane>
+
+   <Label fx:id="lblTambahTransaksiStatus" text="" style="-fx-font-weight: bold; -fx-text-fill: green;" />
+</VBox>

@@ -1,0 +1,2368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="uas.transaksi.TransaksiTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2025-06-06T13:04:31.628Z" hostname="JOVANVITO" time="2.281">
+  <properties/>
+  <testcase name="testIsReceiverExist_ShouldBeFalseForNonExisting()" classname="uas.transaksi.TransaksiTest" time="0.919"/>
+  <testcase name="testGetSenderById_ShouldReturnCorrectSender()" classname="uas.transaksi.TransaksiTest" time="0.093"/>
+  <testcase name="testSaveNewShippingMerek_ShouldIncreaseCount()" classname="uas.transaksi.TransaksiTest" time="0.143"/>
+  <testcase name="testIsValidCourierByName_ShouldBeTrueForExisting()" classname="uas.transaksi.TransaksiTest" time="0.291"/>
+  <testcase name="testGetAllSenders_ShouldReturnTwoSenders()" classname="uas.transaksi.TransaksiTest" time="0.091"/>
+  <testcase name="testIsReceiverExist_ShouldBeTrueForExisting()" classname="uas.transaksi.TransaksiTest" time="0.066"/>
+  <testcase name="testDeleteSender_ShouldDecreaseSenderCount()" classname="uas.transaksi.TransaksiTest" time="0.087"/>
+  <testcase name="testAddShipment_ShouldIncreaseShipmentCount()" classname="uas.transaksi.TransaksiTest" time="0.123"/>
+  <testcase name="testGetAllReceivers_ShouldReturnTwoReceivers()" classname="uas.transaksi.TransaksiTest" time="0.066"/>
+  <testcase name="testGetAllShippingMerek_ShouldReturnTwo()" classname="uas.transaksi.TransaksiTest" time="0.062"/>
+  <testcase name="testIsValidCourierByName_ShouldBeFalseForNonExisting()" classname="uas.transaksi.TransaksiTest" time="0.061"/>
+  <testcase name="testSaveReceiver_AndCheckExistence()" classname="uas.transaksi.TransaksiTest" time="0.071"/>
+  <testcase name="testGetShipmentById_ShouldReturnCorrectShipmentWithRelations()" classname="uas.transaksi.TransaksiTest" time="0.094"/>
+  <testcase name="testUpdateSender_ShouldChangeSenderAddress()" classname="uas.transaksi.TransaksiTest" time="0.096"/>
+  <system-out><![CDATA[Menyiapkan database untuk testing dengan Hibernate...
+Hibernate: 
+    alter table receivers 
+       modify column address TEXT not null
+Hibernate: 
+    alter table senders 
+       modify column address TEXT not null
+Database dan skema tes siap (dikelola oleh Hibernate).
+Hibernate: 
+    delete sd1_0 
+    from
+        shipments sd1_0
+Hibernate: 
+    delete rd1_0 
+    from
+        receivers rd1_0
+Hibernate: 
+    delete sd1_0 
+    from
+        senders sd1_0
+Hibernate: 
+    delete smd1_0 
+    from
+        shippingmerek smd1_0
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        null,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    select
+        null,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    insert 
+    into
+        shipments
+        (receiver_id, sender_id, shipment_code, shipping_date, status) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        rd1_0.id,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    delete sd1_0 
+    from
+        shipments sd1_0
+Hibernate: 
+    delete rd1_0 
+    from
+        receivers rd1_0
+Hibernate: 
+    delete sd1_0 
+    from
+        senders sd1_0
+Hibernate: 
+    delete smd1_0 
+    from
+        shippingmerek smd1_0
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        null,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    select
+        null,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    insert 
+    into
+        shipments
+        (receiver_id, sender_id, shipment_code, shipping_date, status) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        sd1_0.id,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    delete sd1_0 
+    from
+        shipments sd1_0
+Hibernate: 
+    delete rd1_0 
+    from
+        receivers rd1_0
+Hibernate: 
+    delete sd1_0 
+    from
+        senders sd1_0
+Hibernate: 
+    delete smd1_0 
+    from
+        shippingmerek smd1_0
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        null,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    select
+        null,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    insert 
+    into
+        shipments
+        (receiver_id, sender_id, shipment_code, shipping_date, status) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        smd1_0.id,
+        smd1_0.harga,
+        smd1_0.jenis,
+        smd1_0.name 
+    from
+        shippingmerek smd1_0
+Hibernate: 
+    delete sd1_0 
+    from
+        shipments sd1_0
+Hibernate: 
+    delete rd1_0 
+    from
+        receivers rd1_0
+Hibernate: 
+    delete sd1_0 
+    from
+        senders sd1_0
+Hibernate: 
+    delete smd1_0 
+    from
+        shippingmerek smd1_0
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        null,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    select
+        null,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    insert 
+    into
+        shipments
+        (receiver_id, sender_id, shipment_code, shipping_date, status) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        count(smd1_0.id) 
+    from
+        shippingmerek smd1_0 
+    where
+        smd1_0.name=?
+Hibernate: 
+    delete sd1_0 
+    from
+        shipments sd1_0
+Hibernate: 
+    delete rd1_0 
+    from
+        receivers rd1_0
+Hibernate: 
+    delete sd1_0 
+    from
+        senders sd1_0
+Hibernate: 
+    delete smd1_0 
+    from
+        shippingmerek smd1_0
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        null,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    select
+        null,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    insert 
+    into
+        shipments
+        (receiver_id, sender_id, shipment_code, shipping_date, status) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        sd1_0.id,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0
+Hibernate: 
+    delete sd1_0 
+    from
+        shipments sd1_0
+Hibernate: 
+    delete rd1_0 
+    from
+        receivers rd1_0
+Hibernate: 
+    delete sd1_0 
+    from
+        senders sd1_0
+Hibernate: 
+    delete smd1_0 
+    from
+        shippingmerek smd1_0
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        null,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    select
+        null,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    insert 
+    into
+        shipments
+        (receiver_id, sender_id, shipment_code, shipping_date, status) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        rd1_0.id,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    delete sd1_0 
+    from
+        shipments sd1_0
+Hibernate: 
+    delete rd1_0 
+    from
+        receivers rd1_0
+Hibernate: 
+    delete sd1_0 
+    from
+        senders sd1_0
+Hibernate: 
+    delete smd1_0 
+    from
+        shippingmerek smd1_0
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        null,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    select
+        null,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    insert 
+    into
+        shipments
+        (receiver_id, sender_id, shipment_code, shipping_date, status) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        sd1_0.id,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    delete 
+    from
+        senders 
+    where
+        id=?
+Hibernate: 
+    select
+        sd1_0.id,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0
+Hibernate: 
+    select
+        sd1_0.id,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    delete sd1_0 
+    from
+        shipments sd1_0
+Hibernate: 
+    delete rd1_0 
+    from
+        receivers rd1_0
+Hibernate: 
+    delete sd1_0 
+    from
+        senders sd1_0
+Hibernate: 
+    delete smd1_0 
+    from
+        shippingmerek smd1_0
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        null,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    select
+        null,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    insert 
+    into
+        shipments
+        (receiver_id, sender_id, shipment_code, shipping_date, status) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        null,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    select
+        null,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    insert 
+    into
+        shipments
+        (receiver_id, sender_id, shipment_code, shipping_date, status) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        sd1_0.id,
+        sd1_0.receiver_id,
+        r1_0.id,
+        r1_0.address,
+        r1_0.name,
+        sd1_0.sender_id,
+        s1_0.id,
+        s1_0.address,
+        s1_0.name,
+        sd1_0.shipment_code,
+        sd1_0.shipping_date,
+        sd1_0.status 
+    from
+        shipments sd1_0 
+    join
+        senders s1_0 
+            on s1_0.id=sd1_0.sender_id 
+    join
+        receivers r1_0 
+            on r1_0.id=sd1_0.receiver_id
+Hibernate: 
+    delete sd1_0 
+    from
+        shipments sd1_0
+Hibernate: 
+    delete rd1_0 
+    from
+        receivers rd1_0
+Hibernate: 
+    delete sd1_0 
+    from
+        senders sd1_0
+Hibernate: 
+    delete smd1_0 
+    from
+        shippingmerek smd1_0
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        null,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    select
+        null,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    insert 
+    into
+        shipments
+        (receiver_id, sender_id, shipment_code, shipping_date, status) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        rd1_0.id,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0
+Hibernate: 
+    delete sd1_0 
+    from
+        shipments sd1_0
+Hibernate: 
+    delete rd1_0 
+    from
+        receivers rd1_0
+Hibernate: 
+    delete sd1_0 
+    from
+        senders sd1_0
+Hibernate: 
+    delete smd1_0 
+    from
+        shippingmerek smd1_0
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        null,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    select
+        null,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    insert 
+    into
+        shipments
+        (receiver_id, sender_id, shipment_code, shipping_date, status) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        smd1_0.id,
+        smd1_0.harga,
+        smd1_0.jenis,
+        smd1_0.name 
+    from
+        shippingmerek smd1_0
+Hibernate: 
+    delete sd1_0 
+    from
+        shipments sd1_0
+Hibernate: 
+    delete rd1_0 
+    from
+        receivers rd1_0
+Hibernate: 
+    delete sd1_0 
+    from
+        senders sd1_0
+Hibernate: 
+    delete smd1_0 
+    from
+        shippingmerek smd1_0
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        null,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    select
+        null,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    insert 
+    into
+        shipments
+        (receiver_id, sender_id, shipment_code, shipping_date, status) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        count(smd1_0.id) 
+    from
+        shippingmerek smd1_0 
+    where
+        smd1_0.name=?
+Hibernate: 
+    delete sd1_0 
+    from
+        shipments sd1_0
+Hibernate: 
+    delete rd1_0 
+    from
+        receivers rd1_0
+Hibernate: 
+    delete sd1_0 
+    from
+        senders sd1_0
+Hibernate: 
+    delete smd1_0 
+    from
+        shippingmerek smd1_0
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        null,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    select
+        null,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    insert 
+    into
+        shipments
+        (receiver_id, sender_id, shipment_code, shipping_date, status) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        rd1_0.id,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    select
+        rd1_0.id,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    delete sd1_0 
+    from
+        shipments sd1_0
+Hibernate: 
+    delete rd1_0 
+    from
+        receivers rd1_0
+Hibernate: 
+    delete sd1_0 
+    from
+        senders sd1_0
+Hibernate: 
+    delete smd1_0 
+    from
+        shippingmerek smd1_0
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        null,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    select
+        null,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    insert 
+    into
+        shipments
+        (receiver_id, sender_id, shipment_code, shipping_date, status) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        sd1_0.id,
+        sd1_0.receiver_id,
+        r1_0.id,
+        r1_0.address,
+        r1_0.name,
+        sd1_0.sender_id,
+        s1_0.id,
+        s1_0.address,
+        s1_0.name,
+        sd1_0.shipment_code,
+        sd1_0.shipping_date,
+        sd1_0.status 
+    from
+        shipments sd1_0 
+    join
+        senders s1_0 
+            on s1_0.id=sd1_0.sender_id 
+    join
+        receivers r1_0 
+            on r1_0.id=sd1_0.receiver_id
+Hibernate: 
+    select
+        sd1_0.id,
+        sd1_0.receiver_id,
+        r1_0.id,
+        r1_0.address,
+        r1_0.name,
+        sd1_0.sender_id,
+        s1_0.id,
+        s1_0.address,
+        s1_0.name,
+        sd1_0.shipment_code,
+        sd1_0.shipping_date,
+        sd1_0.status 
+    from
+        shipments sd1_0 
+    join
+        senders s1_0 
+            on s1_0.id=sd1_0.sender_id 
+    join
+        receivers r1_0 
+            on r1_0.id=sd1_0.receiver_id 
+    where
+        sd1_0.id=?
+Hibernate: 
+    delete sd1_0 
+    from
+        shipments sd1_0
+Hibernate: 
+    delete rd1_0 
+    from
+        receivers rd1_0
+Hibernate: 
+    delete sd1_0 
+    from
+        senders sd1_0
+Hibernate: 
+    delete smd1_0 
+    from
+        shippingmerek smd1_0
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        senders
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        receivers
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        shippingmerek
+        (harga, jenis, name) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    select
+        null,
+        rd1_0.address,
+        rd1_0.name 
+    from
+        receivers rd1_0 
+    where
+        rd1_0.id=?
+Hibernate: 
+    select
+        null,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    insert 
+    into
+        shipments
+        (receiver_id, sender_id, shipment_code, shipping_date, status) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        sd1_0.id,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Hibernate: 
+    update
+        senders 
+    set
+        address=?,
+        name=? 
+    where
+        id=?
+Hibernate: 
+    select
+        sd1_0.id,
+        sd1_0.address,
+        sd1_0.name 
+    from
+        senders sd1_0 
+    where
+        sd1_0.id=?
+Membersihkan SessionFactory Hibernate dan database testing...
+Database warehouses_id_test dibersihkan oleh Hibernate.
+]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO uas.transaksi.util.HibernateUtil - Attempting to build Hibernate SessionFactory...
+Jun 06, 2025 8:04:27 PM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate ORM core version 6.5.2.Final
+Jun 06, 2025 8:04:27 PM org.hibernate.cache.internal.RegionFactoryInitiator initiateService
+INFO: HHH000026: Second-level cache disabled
+Jun 06, 2025 8:04:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH10001002: Using built-in connection pool (not intended for production use)
+Jun 06, 2025 8:04:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001005: Loaded JDBC driver class: org.mariadb.jdbc.Driver
+Jun 06, 2025 8:04:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001012: Connecting with JDBC URL [jdbc:mariadb://localhost:3306/warehouses_id?allowPublicKeyRetrieval=true&useSSL=false]
+Jun 06, 2025 8:04:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001001: Connection properties: {user=root, password=****}
+Jun 06, 2025 8:04:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001003: Autocommit mode: false
+Jun 06, 2025 8:04:28 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
+INFO: HHH10001115: Connection pool size: 20 (min=1)
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - Database change: is 'warehouses_id'
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: SET NAMES utf8mb4
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_client = utf8mb4
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_connection = utf8mb4
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  character_set_results = utf8mb4
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: SELECT @@character_set_database, @@sql_mode
+Jun 06, 2025 8:04:28 PM org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl constructDialect
+WARN: HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select @@lower_case_table_names
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+Jun 06, 2025 8:04:31 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+Jun 06, 2025 8:04:31 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4eeb14e0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select table_name from information_schema.TABLES where table_schema=database() and table_type='SEQUENCE'
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: SELECT TABLE_SCHEMA TABLE_CAT, NULL  TABLE_SCHEM,  TABLE_NAME, IF(TABLE_TYPE='BASE TABLE' or TABLE_TYPE='SYSTEM VERSIONED', 'TABLE', IF(TABLE_TYPE='TEMPORARY', 'LOCAL TEMPORARY', TABLE_TYPE)) as TABLE_TYPE, TABLE_COMMENT REMARKS, NULL TYPE_CAT, NULL TYPE_SCHEM, NULL TYPE_NAME, NULL SELF_REFERENCING_COL_NAME,  NULL REF_GENERATION FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='warehouses_id' AND  TABLE_TYPE IN ('BASE TABLE','SYSTEM VERSIONED','VIEW') ORDER BY TABLE_TYPE, TABLE_SCHEMA, TABLE_NAME
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: SELECT TABLE_SCHEMA TABLE_CAT, NULL TABLE_SCHEM, TABLE_NAME, COLUMN_NAME, CASE data_type WHEN 'bit' THEN -7 WHEN 'tinyblob' THEN -3 WHEN 'mediumblob' THEN -4 WHEN 'longblob' THEN -4 WHEN 'blob' THEN -4 WHEN 'tinytext' THEN 12 WHEN 'mediumtext' THEN -1 WHEN 'longtext' THEN -1 WHEN 'text' THEN -1 WHEN 'date' THEN 91 WHEN 'datetime' THEN 93 WHEN 'decimal' THEN 3 WHEN 'double' THEN 8 WHEN 'enum' THEN 12 WHEN 'float' THEN 7 WHEN 'int' THEN IF( COLUMN_TYPE like '%unsigned%', 4,4) WHEN 'bigint' THEN -5 WHEN 'mediumint' THEN 4 WHEN 'null' THEN 0 WHEN 'set' THEN 12 WHEN 'smallint' THEN IF( COLUMN_TYPE like '%unsigned%', 5,5) WHEN 'varchar' THEN 12 WHEN 'varbinary' THEN -3 WHEN 'char' THEN 1 WHEN 'binary' THEN -2 WHEN 'time' THEN 92 WHEN 'timestamp' THEN 93 WHEN 'tinyint' THEN IF(COLUMN_TYPE like 'tinyint(1)%',16,-6)  WHEN 'year' THEN 91 ELSE 1111 END  DATA_TYPE, IF(COLUMN_TYPE like 'tinyint(1)%', 'BOOLEAN',  UCASE(IF( COLUMN_TYPE LIKE '%(%)%', CONCAT(SUBSTRING( COLUMN_TYPE,1, LOCATE('(',COLUMN_TYPE) - 1 ), SUBSTRING(COLUMN_TYPE ,1+locate(')', COLUMN_TYPE))), COLUMN_TYPE))) TYPE_NAME, CASE DATA_TYPE WHEN 'date' THEN 10  WHEN 'time' THEN IF(DATETIME_PRECISION = 0, 10, CAST(11 + DATETIME_PRECISION as signed integer))  WHEN 'datetime' THEN IF(DATETIME_PRECISION = 0, 19, CAST(20 + DATETIME_PRECISION as signed integer))  WHEN 'timestamp' THEN IF(DATETIME_PRECISION = 0, 19, CAST(20 + DATETIME_PRECISION as signed integer))  ELSE   IF(NUMERIC_PRECISION IS NULL, LEAST(CHARACTER_MAXIMUM_LENGTH,2147483647), NUMERIC_PRECISION)  END COLUMN_SIZE, 65535 BUFFER_LENGTH,  CONVERT (CASE DATA_TYPE WHEN 'year' THEN NUMERIC_SCALE WHEN 'tinyint' THEN 0 ELSE NUMERIC_SCALE END, UNSIGNED INTEGER) DECIMAL_DIGITS, 10 NUM_PREC_RADIX, IF(IS_NULLABLE = 'yes',1,0) NULLABLE,COLUMN_COMMENT REMARKS, COLUMN_DEFAULT COLUMN_DEF, 0 SQL_DATA_TYPE, 0 SQL_DATETIME_SUB,   LEAST(CHARACTER_OCTET_LENGTH,2147483647) CHAR_OCTET_LENGTH, ORDINAL_POSITION, IS_NULLABLE, NULL SCOPE_CATALOG, NULL SCOPE_SCHEMA, NULL SCOPE_TABLE, NULL SOURCE_DATA_TYPE, IF(EXTRA = 'auto_increment','YES','NO') IS_AUTOINCREMENT,  IF(EXTRA in ('VIRTUAL', 'PERSISTENT', 'VIRTUAL GENERATED', 'STORED GENERATED') ,'YES','NO') IS_GENERATEDCOLUMN  FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='warehouses_id' ORDER BY TABLE_CAT, TABLE_SCHEM, TABLE_NAME, ORDINAL_POSITION
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: 
+    alter table receivers 
+       modify column address TEXT not null
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: 
+    alter table senders 
+       modify column address TEXT not null
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: SHOW CREATE TABLE `warehouses_id`.`shipments`
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: SHOW CREATE TABLE `receivers`
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: SHOW CREATE TABLE `senders`
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: SELECT TABLE_SCHEMA TABLE_CAT, NULL  TABLE_SCHEM,  TABLE_NAME, IF(TABLE_TYPE='BASE TABLE' or TABLE_TYPE='SYSTEM VERSIONED', 'TABLE', IF(TABLE_TYPE='TEMPORARY', 'LOCAL TEMPORARY', TABLE_TYPE)) as TABLE_TYPE, TABLE_COMMENT REMARKS, NULL TYPE_CAT, NULL TYPE_SCHEM, NULL TYPE_NAME, NULL SELF_REFERENCING_COL_NAME,  NULL REF_GENERATION FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='warehouses_id' AND TABLE_NAME='receivers' AND  TABLE_TYPE IN ('BASE TABLE','SYSTEM VERSIONED','VIEW') ORDER BY TABLE_TYPE, TABLE_SCHEMA, TABLE_NAME
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select * from `warehouses_id`.`receivers` where 1=0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: SELECT TABLE_SCHEMA TABLE_CAT, NULL  TABLE_SCHEM,  TABLE_NAME, IF(TABLE_TYPE='BASE TABLE' or TABLE_TYPE='SYSTEM VERSIONED', 'TABLE', IF(TABLE_TYPE='TEMPORARY', 'LOCAL TEMPORARY', TABLE_TYPE)) as TABLE_TYPE, TABLE_COMMENT REMARKS, NULL TYPE_CAT, NULL TYPE_SCHEM, NULL TYPE_NAME, NULL SELF_REFERENCING_COL_NAME,  NULL REF_GENERATION FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='warehouses_id' AND TABLE_NAME='senders' AND  TABLE_TYPE IN ('BASE TABLE','SYSTEM VERSIONED','VIEW') ORDER BY TABLE_TYPE, TABLE_SCHEMA, TABLE_NAME
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select * from `warehouses_id`.`senders` where 1=0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] INFO uas.transaksi.util.HibernateUtil - Hibernate SessionFactory built successfully.
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from shipments sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete rd1_0 from receivers rd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from senders sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete smd1_0 from shippingmerek smd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shipments (receiver_id,sender_id,shipment_code,shipping_date,status) values (?,?,?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select rd1_0.id,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from shipments sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete rd1_0 from receivers rd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from senders sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete smd1_0 from shippingmerek smd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shipments (receiver_id,sender_id,shipment_code,shipping_date,status) values (?,?,?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select sd1_0.id,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from shipments sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete rd1_0 from receivers rd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from senders sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete smd1_0 from shippingmerek smd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shipments (receiver_id,sender_id,shipment_code,shipping_date,status) values (?,?,?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select smd1_0.id,smd1_0.harga,smd1_0.jenis,smd1_0.name from shippingmerek smd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from shipments sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete rd1_0 from receivers rd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from senders sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete smd1_0 from shippingmerek smd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shipments (receiver_id,sender_id,shipment_code,shipping_date,status) values (?,?,?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select count(smd1_0.id) from shippingmerek smd1_0 where smd1_0.name=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from shipments sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete rd1_0 from receivers rd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from senders sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete smd1_0 from shippingmerek smd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shipments (receiver_id,sender_id,shipment_code,shipping_date,status) values (?,?,?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select sd1_0.id,sd1_0.address,sd1_0.name from senders sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from shipments sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete rd1_0 from receivers rd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from senders sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete smd1_0 from shippingmerek smd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shipments (receiver_id,sender_id,shipment_code,shipping_date,status) values (?,?,?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select rd1_0.id,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from shipments sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete rd1_0 from receivers rd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from senders sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete smd1_0 from shippingmerek smd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shipments (receiver_id,sender_id,shipment_code,shipping_date,status) values (?,?,?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select sd1_0.id,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete from senders where id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select sd1_0.id,sd1_0.address,sd1_0.name from senders sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select sd1_0.id,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from shipments sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete rd1_0 from receivers rd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from senders sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete smd1_0 from shippingmerek smd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shipments (receiver_id,sender_id,shipment_code,shipping_date,status) values (?,?,?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shipments (receiver_id,sender_id,shipment_code,shipping_date,status) values (?,?,?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select sd1_0.id,sd1_0.receiver_id,r1_0.id,r1_0.address,r1_0.name,sd1_0.sender_id,s1_0.id,s1_0.address,s1_0.name,sd1_0.shipment_code,sd1_0.shipping_date,sd1_0.status from shipments sd1_0 join senders s1_0 on s1_0.id=sd1_0.sender_id join receivers r1_0 on r1_0.id=sd1_0.receiver_id
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from shipments sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete rd1_0 from receivers rd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from senders sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete smd1_0 from shippingmerek smd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shipments (receiver_id,sender_id,shipment_code,shipping_date,status) values (?,?,?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select rd1_0.id,rd1_0.address,rd1_0.name from receivers rd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from shipments sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete rd1_0 from receivers rd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from senders sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete smd1_0 from shippingmerek smd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shipments (receiver_id,sender_id,shipment_code,shipping_date,status) values (?,?,?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select smd1_0.id,smd1_0.harga,smd1_0.jenis,smd1_0.name from shippingmerek smd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from shipments sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete rd1_0 from receivers rd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from senders sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete smd1_0 from shippingmerek smd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shipments (receiver_id,sender_id,shipment_code,shipping_date,status) values (?,?,?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select count(smd1_0.id) from shippingmerek smd1_0 where smd1_0.name=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from shipments sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete rd1_0 from receivers rd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from senders sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete smd1_0 from shippingmerek smd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shipments (receiver_id,sender_id,shipment_code,shipping_date,status) values (?,?,?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select rd1_0.id,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select rd1_0.id,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from shipments sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete rd1_0 from receivers rd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from senders sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete smd1_0 from shippingmerek smd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shipments (receiver_id,sender_id,shipment_code,shipping_date,status) values (?,?,?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select sd1_0.id,sd1_0.receiver_id,r1_0.id,r1_0.address,r1_0.name,sd1_0.sender_id,s1_0.id,s1_0.address,s1_0.name,sd1_0.shipment_code,sd1_0.shipping_date,sd1_0.status from shipments sd1_0 join senders s1_0 on s1_0.id=sd1_0.sender_id join receivers r1_0 on r1_0.id=sd1_0.receiver_id
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select sd1_0.id,sd1_0.receiver_id,r1_0.id,r1_0.address,r1_0.name,sd1_0.sender_id,s1_0.id,s1_0.address,s1_0.name,sd1_0.shipment_code,sd1_0.shipping_date,sd1_0.status from shipments sd1_0 join senders s1_0 on s1_0.id=sd1_0.sender_id join receivers r1_0 on r1_0.id=sd1_0.receiver_id where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from shipments sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete rd1_0 from receivers rd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete sd1_0 from senders sd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: delete smd1_0 from shippingmerek smd1_0
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into senders (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into receivers (address,name,id) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shippingmerek (harga,jenis,name) values (?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,rd1_0.address,rd1_0.name from receivers rd1_0 where rd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select null,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: insert into shipments (receiver_id,sender_id,shipment_code,shipping_date,status) values (?,?,?,?,?)
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select sd1_0.id,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: update senders set address=?,name=? where id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: COMMIT
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: select sd1_0.id,sd1_0.address,sd1_0.name from senders sd1_0 where sd1_0.id=?
+[Test worker] DEBUG org.mariadb.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+[Test worker] DEBUG org.mariadb.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+[Test worker] INFO uas.transaksi.util.HibernateUtil - Closing Hibernate SessionFactory.
+Jun 06, 2025 8:04:33 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
+INFO: HHH10001008: Cleaning up connection pool [jdbc:mariadb://localhost:3306/warehouses_id?allowPublicKeyRetrieval=true&useSSL=false]
+]]></system-err>
+</testsuite>

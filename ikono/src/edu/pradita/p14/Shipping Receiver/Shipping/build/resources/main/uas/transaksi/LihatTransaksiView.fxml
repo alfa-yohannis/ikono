@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uas.transaksi.LihatTransaksiController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <Label text="Daftar Semua Pengiriman" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+   <TableView fx:id="shipmentTable" VBox.vgrow="ALWAYS">
+       <columns>
+           <TableColumn fx:id="colId" text="ID" prefWidth="50" />
+           <TableColumn fx:id="colShipmentCode" text="Kode Pengiriman" prefWidth="120" />
+           <TableColumn fx:id="colSender" text="Pengirim" prefWidth="150" />
+           <TableColumn fx:id="colReceiver" text="Penerima" prefWidth="150" />
+           <TableColumn fx:id="colShippingDate" text="Tanggal Kirim" prefWidth="100" />
+           <TableColumn fx:id="colStatus" text="Status" prefWidth="100" />
+       </columns>
+   </TableView>
+   <Button text="Refresh Data" onAction="#handleRefreshData" />
+   <Label fx:id="lblLihatTransaksiStatus" text="Data akan ditampilkan di sini." />
+</VBox>

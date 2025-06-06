@@ -1,0 +1,84 @@
+@startuml add_shipment_sequence
+' Mengatur tema
+!theme plain
+
+actor User
+participant "TransaksiApp" as TransaksiApp
+participant "TransaksiController" as MainController
+participant "TambahTransaksiController" as AddShipmentController
+participant "MasterDataService" as MDS
+participant "PengirimanService" as PS
+participant "ISenderDao" as ISenderDao <<interface>>
+participant "IReceiverDao" as IReceiverDao <<interface>>
+participant "IShipmentDao" as IShipmentDao <<interface>>
+participant "DataChangePublisher" as Publisher
+database Database
+
+' Inisialisasi Aplikasi dan Pembukaan Tab
+User -> TransaksiApp : launch()
+TransaksiApp -> MainController : setServices(), setDataChangePublisher()
+MainController -> AddShipmentController : setServices(), setMainTabPane(), setDataChangePublisher()
+AddShipmentController -> MDS : getAllSenders()
+MDS -> ISenderDao : getAllSenders()
+ISenderDao -> Database : SELECT Senders
+Database --> ISenderDao : SenderData List
+ISenderDao --> MDS : SenderData List
+MDS --> AddShipmentController : SenderData List
+AddShipmentController : populate ComboBoxes
+
+group User Input and Save
+    User -> AddShipmentController : fill form & click "Simpan Pengiriman"
+    activate AddShipmentController
+    AddShipmentController -> PS : createShipment(code, senderId, receiverId, date, status)
+    activate PS
+    PS -> ISenderDao : getSenderById(senderId)
+    ISenderDao -> Database : SELECT Sender
+    Database --> ISenderDao : SenderData / null
+    ISenderDao --> PS : SenderData / null
+    PS -> IReceiverDao : getReceiverById(receiverId)
+    IReceiverDao -> Database : SELECT Receiver
+    Database --> IReceiverDao : ReceiverData / null
+    ISenderDao --> PS : ReceiverData / null
+    PS -> IShipmentDao : getAllShipments() (for code duplication check)
+    IShipmentDao -> Database : SELECT Shipments
+    Database --> IShipmentDao : ShipmentData List
+    IShipmentDao --> PS : ShipmentData List
+
+    alt If validation passes
+        PS -> IShipmentDao : saveShipment(newShipment)
+        IShipmentDao -> Database : INSERT Shipment
+        Database --> IShipmentDao : Success
+        IShipmentDao --> PS : Success
+        PS --> AddShipmentController : Success
+    else If validation fails
+        PS --> AddShipmentController : IllegalArgumentException
+        AddShipmentController : show error message
+        deactivate PS
+        destroy PS
+        deactivate AddShipmentController
+        destroy AddShipmentController
+        return
+    end
+
+    AddShipmentController -> Publisher : fireDataChanged()
+    activate Publisher
+    Publisher -> MainController : onDataChanged() (via registered listener in LihatTransaksiController)
+    activate MainController
+    MainController -> AddShipmentController : clean form, switch tab to "Lihat Data"
+    MainController --> Publisher : Notifies LihatTransaksiController directly/indirectly
+    deactivate MainController
+
+    Publisher -> LihatTransaksiController : onDataChanged()
+    activate LihatTransaksiController
+    LihatTransaksiController -> PS : getAllShipments()
+    PS -> IShipmentDao : getAllShipments()
+    IShipmentDao -> Database : SELECT Shipments
+    Database --> IShipmentDao : ShipmentData List
+    IShipmentDao --> PS : ShipmentData List
+    PS --> LihatTransaksiController : ShipmentData List
+    LihatTransaksiController : update TableView
+    deactivate LihatTransaksiController
+    deactivate Publisher
+end group
+
+@enduml

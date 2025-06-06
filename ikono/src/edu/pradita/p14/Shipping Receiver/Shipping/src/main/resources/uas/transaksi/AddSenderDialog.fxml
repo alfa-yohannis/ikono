@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uas.transaksi.AddSenderController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <Label text="Tambah Pengirim Baru" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+   <GridPane hgap="10" vgap="5">
+      <columnConstraints>
+         <ColumnConstraints prefWidth="80" />
+         <ColumnConstraints prefWidth="200" />
+      </columnConstraints>
+      <Label text="ID Pengirim:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+      <TextField fx:id="txtSenderId" promptText="ID (angka)" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+      <Label text="Nama:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+      <TextField fx:id="txtSenderName" promptText="Nama Lengkap" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+      <Label text="Alamat:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+      <TextField fx:id="txtSenderAddress" promptText="Alamat Lengkap" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+   </GridPane>
+   <HBox alignment="CENTER" spacing="10.0">
+      <Button text="Simpan" onAction="#handleSaveSender" />
+      <Button text="Batal" onAction="#handleCancel" />
+   </HBox>
+   <Label fx:id="lblStatus" text="" />
+</VBox>

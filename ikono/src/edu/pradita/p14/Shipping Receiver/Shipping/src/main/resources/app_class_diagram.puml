@@ -1,0 +1,288 @@
+@startuml app_class_diagram
+' Mengatur tema
+!theme plain
+
+' Mengatur warna untuk berbagai jenis elemen
+skinparam class {
+  BorderColor #ADD1B2
+  BackgroundColor #DDEEDA
+  FontColor #333333
+}
+skinparam interface {
+  BorderColor #ADD1B2
+  BackgroundColor #E1F0FF
+  FontColor #333333
+}
+skinparam stereotype {
+  BorderColor #BBBBBB
+  BackgroundColor #EEEEEE
+  FontColor #555555
+}
+skinparam ArrowColor #444444
+
+' Mengatur gaya untuk agregasi dan komposisi
+skinparam association {
+    LinkColor #333333
+    FontColor #333333
+}
+skinparam classAttribute {
+    FontColor #000080
+}
+skinparam classMethod {
+    FontColor #006400
+}
+
+' Deklarasi Paket
+package "uas.transaksi" as app_pkg {
+    package "dao" as dao_pkg {
+        package "impl" as dao_impl_pkg {
+        }
+        package "decorator" as dao_decorator_pkg {
+        }
+    }
+    package "data" as data_pkg {
+    }
+    package "service" as service_pkg {
+    }
+    package "factory" as factory_pkg {
+    }
+    package "event" as event_pkg {
+    }
+    package "util" as util_pkg {
+    }
+}
+
+' Kelas-kelas Data (Entities)
+class "uas.transaksi.data.SenderData" as SenderData {
+  + id: int
+  + name: String
+  + address: String
+  --
+  + SenderData(id, name, address)
+  + getId(): int
+  ' ... (methods hidden for brevity)
+}
+class "uas.transaksi.data.ReceiverData" as ReceiverData {
+  + id: int
+  + name: String
+  + address: String
+  ' ...
+}
+class "uas.transaksi.data.ShippingMerekData" as ShippingMerekData {
+  + id: int
+  + name: String
+  + harga: double
+  ' ...
+}
+class "uas.transaksi.data.ShipmentData" as ShipmentData {
+  + id: int
+  + shipmentCode: String
+  + shippingDate: Date
+  + status: String
+  --
+  + getSender(): SenderData
+  + getReceiver(): ReceiverData
+  ' ...
+}
+
+' Interfaces DAO (ISP, OCP, DIP)
+interface "uas.transaksi.dao.ISenderDao" as ISenderDao {
+  + saveSender(sender: SenderData)
+  + getSenderById(id: int): SenderData
+  ' ...
+}
+interface "uas.transaksi.dao.IReceiverDao" as IReceiverDao {
+  + saveReceiver(receiver: ReceiverData)
+  ' ...
+}
+interface "uas.transaksi.dao.IShipmentDao" as IShipmentDao {
+  + saveShipment(shipment: ShipmentData)
+  ' ...
+}
+interface "uas.transaksi.dao.IShippingMerekDao" as IShippingMerekDao {
+  + saveShippingMerek(merek: ShippingMerekData)
+  ' ...
+}
+
+' Implementasi DAO (OCP, LSP)
+class "uas.transaksi.dao.impl.SenderDaoImpl" as SenderDaoImpl {
+  + SenderDaoImpl()
+  ' ... implementasi metode ISenderDao
+}
+class "uas.transaksi.dao.impl.ReceiverDaoImpl" as ReceiverDaoImpl {
+  + ReceiverDaoImpl()
+  ' ...
+}
+class "uas.transaksi.dao.impl.ShippingMerekDaoImpl" as ShippingMerekDaoImpl {
+  + ShippingMerekDaoImpl()
+  ' ...
+}
+class "uas.transaksi.dao.impl.ShipmentDaoImpl" as ShipmentDaoImpl {
+  - senderDao: ISenderDao
+  - receiverDao: IReceiverDao
+  + ShipmentDaoImpl()
+  ' ...
+}
+
+' Decorator (Structural Pattern)
+class "uas.transaksi.dao.decorator.LoggingSenderDaoDecorator" as LoggingSenderDaoDecorator {
+  - decoratedDao: ISenderDao
+  + LoggingSenderDaoDecorator(decoratedDao: ISenderDao)
+  ' ... implementasi ISenderDao
+}
+
+' Service Layer (SRP, DIP)
+class "uas.transaksi.service.MasterDataService" as MasterDataService {
+  - senderDao: ISenderDao
+  - receiverDao: IReceiverDao
+  - shippingMerekDao: IShippingMerekDao
+  + MasterDataService(senderDao: ISenderDao, receiverDao: IReceiverDao, shippingMerekDao: IShippingMerekDao)
+  + addSender(sender: SenderData)
+  ' ...
+}
+class "uas.transaksi.service.PengirimanService" as PengirimanService {
+  - senderDao: ISenderDao
+  - receiverDao: IReceiverDao
+  - shipmentDao: IShipmentDao
+  + PengirimanService(senderDao: ISenderDao, receiverDao: IReceiverDao, shipmentDao: IShipmentDao)
+  + createShipment(...)
+  ' ...
+}
+
+' Factory (Creational Pattern)
+class "uas.transaksi.factory.DaoFactory" as DaoFactory {
+  + static getSenderDao(): ISenderDao
+  + static getReceiverDao(): IReceiverDao
+  ' ...
+}
+
+' Observer Pattern (Behavioral Pattern)
+interface "uas.transaksi.event.DataChangeListener" as DataChangeListener {
+  + onDataChanged()
+}
+class "uas.transaksi.event.DataChangePublisher" as DataChangePublisher {
+  - listeners: List<DataChangeListener>
+  + addListener(listener: DataChangeListener)
+  + fireDataChanged()
+}
+
+' Utility
+class "uas.transaksi.util.HibernateUtil" as HibernateUtil {
+  - static sessionFactory: SessionFactory
+  + static getSessionFactory(): SessionFactory
+  ' ...
+}
+
+' Kelas Aplikasi dan Controller
+class "uas.transaksi.Transaksi" as TransaksiApp {
+  - masterDataService: MasterDataService
+  - pengirimanService: PengirimanService
+  - dataChangePublisher: DataChangePublisher
+  + init()
+  + start(primaryStage: Stage)
+  ' ...
+}
+class "uas.transaksi.TransaksiController" as TransaksiController {
+  - mainTabPane: TabPane
+  - masterDataService: MasterDataService
+  - pengirimanService: PengirimanService
+  - dataChangePublisher: DataChangePublisher
+  - lihatTransaksiController: LihatTransaksiController
+  - tambahTransaksiController: TambahTransaksiController
+  + setServices(...)
+  + setDataChangePublisher(...)
+  ' ...
+}
+class "uas.transaksi.LihatTransaksiController" as LihatTransaksiController {
+  - pengirimanService: PengirimanService
+  - dataChangePublisher: DataChangePublisher
+  + setPengirimanService(service: PengirimanService)
+  + setDataChangePublisher(publisher: DataChangePublisher)
+  + handleRefreshData(event: ActionEvent)
+  + onDataChanged()
+  ' ...
+}
+class "uas.transaksi.TambahTransaksiController" as TambahTransaksiController {
+  - masterDataService: MasterDataService
+  - pengirimanService: PengirimanService
+  - dataChangePublisher: DataChangePublisher
+  - mainTabPane: TabPane
+  + setServices(...)
+  + setDataChangePublisher(...)
+  + setMainTabPane(...)
+  + handleSimpanPengiriman(event: ActionEvent)
+  ' ...
+}
+class "uas.transaksi.AddSenderController" as AddSenderController {
+  - masterDataService: MasterDataService
+  + setMasterDataService(service: MasterDataService)
+  ' ...
+}
+class "uas.transaksi.AddReceiverController" as AddReceiverController {
+  - masterDataService: MasterDataService
+  + setMasterDataService(service: MasterDataService)
+  ' ...
+}
+
+
+' ==== Hubungan / Relasi ====
+
+' --- Data Layer ---
+ShipmentData o-- SenderData : "1"
+ShipmentData o-- ReceiverData : "1"
+
+' --- DAO Layer ---
+ISenderDao <|.. SenderDaoImpl : <<implements>>
+IReceiverDao <|.. ReceiverDaoImpl : <<implements>>
+IShipmentDao <|.. ShipmentDaoImpl : <<implements>>
+IShippingMerekDao <|.. ShippingMerekDaoImpl : <<implements>>
+
+ShipmentDaoImpl --> ISenderDao : uses
+ShipmentDaoImpl --> IReceiverDao : uses
+
+' Decorator
+ISenderDao <|.. LoggingSenderDaoDecorator : <<implements>>
+LoggingSenderDaoDecorator o-- ISenderDao : decorates
+
+' Factory
+DaoFactory ..> ISenderDao : creates
+DaoFactory ..> IReceiverDao : creates
+DaoFactory ..> IShipmentDao : creates
+DaoFactory ..> IShippingMerekDao : creates
+
+' --- Service Layer ---
+MasterDataService --> ISenderDao : uses
+MasterDataService --> IReceiverDao : uses
+MasterDataService --> IShippingMerekDao : uses
+
+PengirimanService --> ISenderDao : uses
+PengirimanService --> IReceiverDao : uses
+PengirimanService --> IShipmentDao : uses
+
+' --- Event Layer (Observer) ---
+DataChangeListener <|.. LihatTransaksiController : <<implements>>
+DataChangePublisher o-- DataChangeListener : notifies "many"
+
+' --- Application & Controller Layer ---
+TransaksiApp --> MasterDataService : uses
+TransaksiApp --> PengirimanService : uses
+TransaksiApp --> DataChangePublisher : manages
+
+TransaksiController --> MasterDataService : uses
+TransaksiController --> PengirimanService : uses
+TransaksiController --> DataChangePublisher : passes
+TransaksiController --> LihatTransaksiController : manages
+TransaksiController --> TambahTransaksiController : manages
+
+LihatTransaksiController --> PengirimanService : uses
+LihatTransaksiController --> DataChangePublisher : listens
+
+TambahTransaksiController --> MasterDataService : uses
+TambahTransaksiController --> PengirimanService : uses
+TambahTransaksiController --> DataChangePublisher : notifies
+TambahTransaksiController --> TransaksiController : has reference (via setMainTabPane)
+
+AddSenderController --> MasterDataService : uses
+AddReceiverController --> MasterDataService : uses
+
+@enduml
