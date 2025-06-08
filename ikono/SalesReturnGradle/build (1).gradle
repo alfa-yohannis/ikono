@@ -1,0 +1,64 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.10' // Atau versi terbaru yang stabil
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = "17.0.8" // Sesuaikan dengan versi JavaFX yang Anda gunakan (misal 17.0.8 atau yang lebih baru)
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics' ]
+}
+
+application {
+    mainClass = 'org.example.MainApp'
+    // Tambahkan VM options jika diperlukan untuk modul JavaFX di Java 9+
+    // applicationDefaultJvmArgs = ['--module-path', '/path/to/javafx-sdk-17.0.8/lib', '--add-modules', 'javafx.controls,javafx.fxml,javafx.graphics']
+}
+
+dependencies {
+    // JavaFX - sudah diatur oleh plugin javafx, namun jika ada masalah modul, pastikan path SDK benar
+
+    // Hibernate Core
+    implementation 'org.hibernate:hibernate-core:5.6.15.Final' // Versi stabil Hibernate 5.x
+
+    // MySQL Connector
+    implementation 'mysql:mysql-connector-java:8.0.33' // Atau versi terbaru
+
+    // JUnit 5 (Jupiter) for testing
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+    testImplementation 'org.mockito:mockito-core:5.11.0' // Mockito untuk mocking
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.11.0' // Integrasi Mockito dengan JUnit 5
+
+
+    // SLF4J for logging (Hibernate uses SLF4J)
+    implementation 'org.slf4j:slf4j-api:1.7.36'
+    implementation 'org.slf4j:slf4j-simple:1.7.36' // Implementasi logging sederhana, bisa diganti dengan Logback atau Log4j2
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// Pastikan source compatibility diatur ke versi Java yang Anda gunakan (misal 11, 17, atau 21)
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+// Mengatasi masalah modul JavaFX saat run jika tidak menggunakan IDE dengan konfigurasi otomatis
+run {
+    jvmArgs += ['--add-opens', 'java.base/java.lang.reflect=org.hibernate.orm.core']
+    jvmArgs += ['--add-opens', 'java.base/java.util=org.hibernate.orm.core']
+    // Jika menggunakan JavaFX SDK terpisah, tambahkan --module-path dan --add-modules
+    // Contoh jika SDK di C:\javafx-sdk-17.0.8
+    // jvmArgs += ['--module-path', 'C:/javafx-sdk-17.0.8/lib', '--add-modules', 'javafx.controls,javafx.fxml,javafx.graphics']
+}
