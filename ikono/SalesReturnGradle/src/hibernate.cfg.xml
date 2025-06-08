@@ -1,0 +1,34 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/returnpenjualan?createDatabaseIfNotExist=true&amp;useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="hibernate.connection.username">root</property> <!-- Ganti dengan username phpMyAdmin Anda -->
+        <property name="hibernate.connection.password"></property> <!-- Ganti dengan password phpMyAdmin Anda (kosong jika tidak ada) -->
+
+        <!-- JDBC connection pool (C3P0 direkomendasikan) -->
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.timeout">300</property> <!-- detik -->
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">3000</property> <!-- detik -->
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property> <!-- Atau MySQL5Dialect jika menggunakan MySQL 5.x -->
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup (change for production) -->
+        <!-- Pilihan: validate, update, create, create-drop -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Nama kelas entitas yang dipetakan -->
+        <mapping class="org.example.model.SalesReturn"/>
+
+    </session-factory>
+</hibernate-configuration>
