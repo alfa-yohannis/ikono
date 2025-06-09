@@ -1,0 +1,51 @@
+@startuml sequence_diagram
+title Proses Tes Koneksi Database
+
+actor User
+participant "Controller\n:DatabaseConnection" as DC
+participant "Strategy\n:MySqlStrategy" as DS
+participant "Util\n:HibernateUtil" as HU
+participant "Factory\n:SessionFactory" as SF
+participant "Sesi\n:Session" as S
+
+User -> DC : klikTombolTesKoneksi()
+activate DC
+
+DC -> DC : ambilInputForm()
+DC -> DS ** : new MySqlStrategy()
+DC -> HU : shutdown()
+activate HU
+deactivate HU
+
+DC -> HU : getSessionFactory(strategy, data...)
+activate HU
+HU -> DS : getProperties(data...)
+activate DS
+DS --> HU : Properties
+deactivate DS
+note right of HU : Proses internal Hibernate\nmembuat SessionFactory
+HU --> DC : instance SessionFactory (sf)
+deactivate HU
+
+DC -> SF ** : openSession()
+activate SF
+SF --> DC : instance Session (s)
+deactivate SF
+
+alt Sesi berhasil dibuka
+    DC -> S : isOpen()
+    activate S
+    S --> DC : true
+    deactivate S
+    DC -> DC : setInfoLabel("Koneksi Berhasil!", "green")
+    DC -> S : close()
+    activate S
+    deactivate S
+else Sesi gagal atau error lain
+    DC -> DC : setInfoLabel("Koneksi Gagal...", "red")
+end
+
+DC --> User : Tampilkan pesan di UI
+deactivate DC
+
+@enduml
