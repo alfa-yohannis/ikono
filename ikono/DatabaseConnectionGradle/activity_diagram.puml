@@ -1,0 +1,41 @@
+@startuml activity_diagram
+title Tes Koneksi Database
+
+start
+:Pengguna mengisi form input
+(Host, Port, User, Pass, DB);
+:Pengguna memilih Tipe Database (MySQL)
+dari ComboBox;
+:Pengguna menekan tombol "Tes Koneksi";
+:Controller (DatabaseConnection)
+mengambil semua input;
+:Controller membuat instance
+DatabaseStrategy terpilih;
+:Controller memanggil
+HibernateUtil.shutdown()
+(menutup koneksi lama jika ada);
+:Controller memanggil
+HibernateUtil.getSessionFactory()
+dengan data input dan strategy;
+
+if (SessionFactory berhasil dibuat?) then (Ya)
+  :Mencoba membuka Session
+  dari SessionFactory;
+  if (Session berhasil dibuka?) then (Ya)
+    :Menampilkan pesan
+    "Koneksi Berhasil!" (hijau)
+    di infoLabel;
+    :Menutup Session;
+  else (Tidak)
+    :Menampilkan pesan
+    "Sesi gagal dibuka." (merah)
+    di infoLabel;
+  endif
+else (Tidak / Terjadi Exception)
+  :Menampilkan pesan
+  "Koneksi Gagal: [pesan error]" (merah)
+  di infoLabel;
+endif
+stop
+
+@enduml
