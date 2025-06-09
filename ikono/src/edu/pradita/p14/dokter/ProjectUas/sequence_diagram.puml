@@ -1,0 +1,60 @@
+@startuml
+
+title Diagram Sequence: Pengguna Menyimpan Dokter Baru
+
+actor Pengguna
+
+participant "ui:DoctorView" as View <<JavaFX UI>>
+participant "controller:DoctorController" as Controller
+participant "doctorDAO:DoctorDAO" as DoctorDAO
+participant "session:Session" as HSession <<Hibernate>>
+participant "db:Database" as DB
+
+Pengguna -> View : Mengisi form data dokter baru
+Pengguna -> View : Mengklik tombol "Simpan"
+
+View -> Controller : saveOrUpdateDoctor()
+activate Controller
+
+Controller -> Controller : Mengambil data dari form
+Controller -> Controller : Membuat objek newDoctor:Doctor
+Controller -> DoctorDAO : saveOrUpdate(newDoctor)
+activate DoctorDAO
+
+DoctorDAO -> HSession : getSessionFactory().openSession()
+activate HSession
+HSession --> DoctorDAO : session
+DoctorDAO -> HSession : beginTransaction()
+DoctorDAO -> HSession : saveOrUpdate(newDoctor)
+note right of HSession : Hibernate melakukan INSERT SQL
+HSession -> DB : INSERT INTO doctors...
+activate DB
+DB --> HSession : Sukses
+deactivate DB
+DoctorDAO -> HSession : transaction.commit()
+DoctorDAO -> HSession : close()
+deactivate HSession
+DoctorDAO --> Controller : void
+deactivate DoctorDAO
+
+Controller -> Controller : newDoctor.updateProperties()
+Controller -> DoctorDAO : doctors = getAll()
+activate DoctorDAO
+DoctorDAO -> HSession : getSessionFactory().openSession()
+activate HSession
+HSession --> DoctorDAO : session
+DoctorDAO -> HSession : createQuery("FROM Doctor...")
+HSession -> DB : SELECT * FROM doctors...
+activate DB
+DB --> HSession : List<DoctorData>
+deactivate DB
+HSession --> DoctorDAO : listDokterDariDB
+deactivate HSession
+DoctorDAO -> Controller : listDokterDariDB
+deactivate DoctorDAO
+
+Controller -> View : Memperbarui TableView dengan daftar dokter baru
+Controller -> View : Mereset form input
+deactivate Controller
+
+@enduml

@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0' // Or latest version
+}
+
+group 'dokter'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = "17" // Or your JavaFX version
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics' ] // Add fxml if you use it, graphics if needed
+}
+
+dependencies {
+    // JavaFX dependencies are handled by the plugin
+
+    // Hibernate ORM
+    implementation 'org.hibernate:hibernate-core:5.6.15.Final' // Or latest 5.x or 6.x
+
+    // MySQL Connector
+    implementation 'mysql:mysql-connector-java:8.0.33' // Or latest
+
+    // JUnit for testing
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
+    // SLF4J for Hibernate logging (optional, but good practice)
+    implementation 'org.slf4j:slf4j-simple:1.7.36' // Or any SLF4J binding
+}
+
+application {
+    mainClass = 'dokter.MainApp'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// Ensure resources are copied to output
+sourceSets {
+    main {
+        resources {
+            srcDirs = ["src/main/resources"]
+        }
+    }
+} 

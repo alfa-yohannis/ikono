@@ -1,0 +1,53 @@
+@startuml
+
+title Diagram Aktivitas: Menyimpan atau Memperbarui Dokter
+
+|Pengguna| |Sistem (DoctorController)| |Sistem (DoctorDAO)| |Sistem (Database/Hibernate)|
+start
+:Pengguna mengisi form data dokter;
+:Pengguna mengklik tombol "Simpan";
+
+|Sistem (DoctorController)|
+:Menerima aksi simpan;
+:Mengambil data dari form (nama, spesialisasi, dll.);
+:Mengambil tanggal dari DatePicker;
+:Mengambil objek Specialization dari ComboBox;
+
+if (Input valid (tanggal & spesialisasi dipilih)?) then (ya)
+  if (Dokter dipilih dari tabel (mode update)?) then (ya)
+    :Mengambil objek Doctor yang dipilih;
+    :Memperbarui field objek Doctor\ndengan data dari form;
+    note right: Doctor doctorToSave = selectedDoctor; \n doctorToSave.setFirstName(...);
+  else (tidak, mode tambah baru)
+    :Membuat objek Doctor baru\ndengan data dari form;
+    note right: Doctor doctorToSave = new Doctor(...);
+  endif
+  
+  |Sistem (DoctorDAO)|
+  :Memanggil doctorDAO.saveOrUpdate(doctorToSave);
+  
+  |Sistem (Database/Hibernate)|
+  :Membuka Session Hibernate;
+  :Memulai Transaksi;
+  :Menyimpan atau memperbarui\nrecord Dokter di database;
+  :Commit Transaksi;
+  :Menutup Session Hibernate;
+  
+  |Sistem (DoctorController)|
+  :Memanggil doctorToSave.updateProperties()\n(untuk sinkronisasi properti JavaFX);
+  :Memuat ulang daftar dokter dari database\n(memanggil doctorDAO.getAll());
+  
+  |Sistem (DoctorDAO)|
+  :Mengambil semua dokter dari database;
+  
+  |Sistem (DoctorController)|
+  :Memperbarui TableView dengan daftar dokter baru;
+  :Mereset form input;
+  :Menampilkan notifikasi sukses (opsional);
+else (tidak)
+  :Menampilkan peringatan input tidak valid;
+endif
+
+stop
+
+@enduml

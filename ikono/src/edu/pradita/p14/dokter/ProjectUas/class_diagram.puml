@@ -1,0 +1,148 @@
+@startuml
+
+title Diagram Kelas Aplikasi Dokter
+
+skinparam classAttributeIconSize 0
+hide empty members
+
+package dokter <<Frame>> {
+  class MainApp {
+    +start(Stage)
+    +main(String[])
+    +stop()
+  }
+  class DoctorController {
+    -root: BorderPane
+    -tableView: TableView<Doctor>
+    -doctorList: ObservableList<Doctor>
+    -specializationList: ObservableList<Specialization>
+    -txtFirstName: TextField
+    -cbSpecialization: ComboBox<Specialization>
+    -doctorDAO: DoctorDAO
+    -specializationDAO: SpecializationDAO
+    -scheduleDAO: ScheduleDAO
+    -patientDAO: PatientDAO
+    +DoctorController()
+    -initUI()
+    -loadDoctors()
+    -loadSpecializations()
+    -saveOrUpdateDoctor()
+    -hapusDoctor()
+    -showDoctorSchedule()
+    -showPatientData()
+    +getView(): BorderPane
+  }
+}
+
+package dokter.model <<Folder>> {
+  class Doctor {
+    -doctorId: int
+    -firstName: String
+    -lastName: String
+    -specialization: Specialization
+    -email: String
+    -phoneNumber: String
+    -address: String
+    -hireDate: LocalDate
+    -schedules: Set<Schedule>
+    +updateProperties()
+    +getFxFirstName(): String
+    +specializationNameProperty(): StringProperty
+    ' .. other getters/setters & JavaFX properties ..
+  }
+  class Specialization {
+    -id: int
+    -specializationName: String
+    -doctors: Set<Doctor>
+    +toString(): String
+  }
+  class Schedule {
+    -id: int
+    -doctor: Doctor
+    -dayOfWeek: String
+    -startTime: String
+    -endTime: String
+    -description: String
+    -location: String
+    +updateProperties()
+    +dayOfWeekProperty(): StringProperty
+  }
+  class Patient {
+    -idPasien: int
+    -namaLengkap: String
+    -tanggalLahir: LocalDate
+    ' .. other fields ..
+    +updateProperties()
+    +namaLengkapProperty(): StringProperty
+  }
+}
+
+package dokter.dao <<Folder>> {
+  interface DoctorDAO {
+    +saveOrUpdate(Doctor)
+    +getById(int): Doctor
+    +getAll(): List<Doctor>
+    +delete(Doctor)
+    +searchByName(String): List<Doctor>
+  }
+  interface SpecializationDAO {
+    +save(Specialization)
+    +getById(int): Specialization
+    +getByName(String): Specialization
+    +getAll(): List<Specialization>
+  }
+  interface ScheduleDAO {
+    +save(Schedule)
+    +getByDoctorId(int): List<Schedule>
+  }
+  interface PatientDAO {
+    +save(Patient)
+    +getById(int): Patient
+    +getAll(): List<Patient>
+  }
+}
+
+package dokter.dao.impl <<Folder>> {
+  class DoctorDAOImpl implements DoctorDAO
+  class SpecializationDAOImpl implements SpecializationDAO
+  class ScheduleDAOImpl implements ScheduleDAO
+  class PatientDAOImpl implements PatientDAO
+}
+
+package dokter.util <<Folder>> {
+  class HibernateUtil {
+    -sessionFactory: SessionFactory <<static>>
+    -buildSessionFactory(): SessionFactory <<static>>
+    +getSessionFactory(): SessionFactory <<static>>
+    +shutdown() <<static>>
+  }
+}
+
+' Relationships
+MainApp --> DoctorController : "creates and uses"
+
+DoctorController o--> "1" DoctorDAO
+DoctorController o--> "1" SpecializationDAO
+DoctorController o--> "1" ScheduleDAO
+DoctorController o--> "1" PatientDAO
+
+DoctorController ..> Doctor : "uses (displays)"
+DoctorController ..> Specialization : "uses (displays)"
+DoctorController ..> Schedule : "uses (displays)"
+DoctorController ..> Patient : "uses (displays)"
+
+DoctorDAOImpl ..> HibernateUtil : "uses"
+SpecializationDAOImpl ..> HibernateUtil : "uses"
+ScheduleDAOImpl ..> HibernateUtil : "uses"
+PatientDAOImpl ..> HibernateUtil : "uses"
+
+DoctorDAOImpl ..> Doctor : "manipulates"
+SpecializationDAOImpl ..> Specialization : "manipulates"
+ScheduleDAOImpl ..> Schedule : "manipulates"
+PatientDAOImpl ..> Patient : "manipulates"
+
+Doctor "1" -- "0..1" Specialization : has
+Doctor "1" -- "0..*" Schedule : has
+' Patient "many" -- "many" Doctor (melalui Appointment jika ada) - tidak ada di model saat ini
+
+@enduml
