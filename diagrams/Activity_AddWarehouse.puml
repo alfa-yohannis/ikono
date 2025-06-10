@@ -1,0 +1,53 @@
+@startuml
+title Activity Diagram: Adding a New Warehouse
+
+|User|
+start
+:Clicks 'Add Warehouse' button;
+
+|System (MainViewController)|
+:Loads and displays 'WarehouseDialog.fxml';
+note right
+  DialogController.setWarehouse(null)
+  is called to indicate 'Add New' mode.
+end note
+
+|User|
+:Enters Warehouse Name in Name Field;
+:Enters Warehouse Location in Location Field;
+:Clicks 'OK' button in Dialog;
+
+|System (WarehouseDialogController)|
+:processResults() is called;
+:Validates input (Name is not empty);
+
+if (Input is Valid?) then (yes)
+    :Creates a new Warehouse object with entered data;
+    |System (MainViewController)|
+    :Receives new Warehouse object from Dialog;
+    :Calls WarehouseService.saveWarehouse(newWarehouse);
+
+    |System (WarehouseService)|
+    :Performs business logic (e.g., check for duplicate name);
+    :Calls WarehouseDao.save(newWarehouse);
+
+    |System (WarehouseDaoImpl)|
+    :Opens Hibernate Session and Transaction;
+    :Persists new Warehouse object to Database;
+    :Commits Transaction and Closes Session;
+
+    |System (MainViewController)|
+    :Calls loadWarehouses() to refresh ListView;
+    :Displays 'Success' status message;
+else (no)
+    |System (WarehouseDialogController)|
+    :Displays validation error message within Dialog;
+    |User|
+    :Corrects input in Dialog;
+    --> "Clicks 'OK' button in Dialog"
+endif
+
+|User|
+stop
+
+@enduml

@@ -1,0 +1,188 @@
+@startuml
+title Class Diagram - Warehouse Inventory System
+
+!theme sandstone
+' hide empty members ' Sembunyikan field/method kosong jika terlalu ramai
+
+package "Model" <<Folder>> {
+  class Warehouse {
+    - id: int
+    - name: String
+    - location: String
+    __
+    + products: List<Product>
+    .. Constructors ..
+    + Warehouse()
+    + Warehouse(name: String, location: String)
+    .. Getters & Setters ..
+    + getId(): int
+    + getName(): String
+    + getLocation(): String
+    + getProducts(): List<Product>
+    .. Helper Methods ..
+    + addProduct(product: Product): void
+    + removeProduct(product: Product): void
+  }
+
+  class Product {
+    - id: int
+    - name: String
+    - sku: String
+    - quantity: int
+    - price: BigDecimal
+    __
+    + warehouse: Warehouse
+    .. Constructors ..
+    + Product()
+    + Product(name: String, sku: String, quantity: int, price: BigDecimal, warehouse: Warehouse)
+    .. Getters & Setters ..
+  }
+}
+
+package "DAO (Data Access Object)" <<Folder>> {
+  interface DaoFactory {
+    + getWarehouseDao(): WarehouseDao
+    + getProductDao(): ProductDao
+  }
+
+  class HibernateDaoFactory implements DaoFactory {
+    + getWarehouseDao(): WarehouseDao
+    + getProductDao(): ProductDao
+  }
+
+  interface WarehouseDao {
+    + findById(id: int): Warehouse
+    + findAll(): List<Warehouse>
+    + save(warehouse: Warehouse): void
+    + update(warehouse: Warehouse): void
+    + deleteById(id: int): void
+    + findByName(name: String): Warehouse
+  }
+
+  interface ProductDao {
+    + findById(id: int): Product
+    + findAll(): List<Product>
+    + findByWarehouseId(warehouseId: int): List<Product>
+    + save(product: Product): void
+    + update(product: Product): void
+    + delete(product: Product): void ' Atau deleteById(id: int) jika Anda mengubahnya
+    + findBySku(sku: String): Product
+  }
+
+  package "impl" <<Folder>> {
+    class WarehouseDaoImpl implements WarehouseDao {
+      ' ... methods ...
+    }
+    class ProductDaoImpl implements ProductDao {
+      ' ... methods ...
+    }
+  }
+}
+
+package "Service" <<Folder>> {
+  class WarehouseService {
+    - warehouseDao: WarehouseDao
+    __
+    + WarehouseService(daoFactory: DaoFactory)
+    + saveWarehouse(warehouse: Warehouse): void
+    + deleteWarehouse(warehouseId: int): void
+    ' ... other public methods ...
+  }
+
+  class ProductService {
+    - productDao: ProductDao
+    - eventManager: ProductEventManager
+    __
+    + ProductService(daoFactory: DaoFactory, eventManager: ProductEventManager)
+    + saveProduct(product: Product): void
+    + deleteProduct(productId: int): void
+    ' ... other public methods ...
+  }
+}
+
+package "Controller" <<Folder>> {
+  class MainViewController {
+    - warehouseService: WarehouseService
+    - productService: ProductService
+    __
+    + initialize(): void
+    + handleAddWarehouseAction(event: ActionEvent): void
+    ' ... other FXML handlers ...
+  }
+  class WarehouseDialogController {
+    ' ... FXML fields and methods ...
+  }
+  class ProductDialogController {
+    ' ... FXML fields and methods ...
+  }
+}
+
+package "Util" <<Folder>> {
+  class HibernateUtil {
+    {static} - SESSION_FACTORY: SessionFactory
+    {static} + getSessionFactory(): SessionFactory
+    {static} + shutdown(): void
+  }
+}
+
+package "Observer Pattern" <<Folder>> {
+  interface InventoryObserver {
+    + update(product: Product, actionMessage: String): void
+  }
+  interface InventorySubject {
+    + registerObserver(observer: InventoryObserver): void
+    + removeObserver(observer: InventoryObserver): void
+    + notifyObservers(product: Product, actionMessage: String): void
+  }
+  class ProductEventManager implements InventorySubject {
+    {static} - instance: ProductEventManager
+    - observers: List<InventoryObserver>
+    __
+    {static} + getInstance(): ProductEventManager
+    + productAdded(product: Product): void
+    ' ... other notification methods ...
+  }
+  class LoggingObserver implements InventoryObserver {
+    + update(product: Product, actionMessage: String): void
+  }
+}
+
+package "Adapter Pattern" <<Folder>> {
+    class LegacyProductDataProvider {
+        + getLegacyProductData(legacySku: String): Map<String, Object>
+    }
+    class ProductAdapter {
+        - legacyProvider: LegacyProductDataProvider
+        + ProductAdapter(legacyProvider: LegacyProductDataProvider)
+        + getProduct(legacySku: String): Product
+    }
+}
+
+' --- Relationships ---
+Warehouse "1" o-- "*" Product : products <
+' Lebih tepatnya, Product memiliki referensi ke Warehouse
+Product "*" -- "1" Warehouse : warehouse >
+
+MainViewController --> WarehouseService
+MainViewController --> ProductService
+MainViewController --> DaoFactory
+
+WarehouseService ..> WarehouseDao : uses >
+ProductService ..> ProductDao : uses >
+ProductService ..> ProductEventManager : notifies >
+
+HibernateDaoFactory ..> WarehouseDaoImpl : creates >
+HibernateDaoFactory ..> ProductDaoImpl : creates >
+
+ProductEventManager o-- "*" InventoryObserver : observers
+
+ProductAdapter ..> LegacyProductDataProvider : uses >
+ProductAdapter ..> Product : creates >
+
+
+' GUI elements to controllers (simplified)
+' MainView.fxml ..> MainViewController : controls
+' WarehouseDialog.fxml ..> WarehouseDialogController : controls
+' ProductDialog.fxml ..> ProductDialogController : controls
+
+@enduml
