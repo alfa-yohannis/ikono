@@ -1,0 +1,8 @@
+@startuml
+start
+:Input Data Transaksi;
+:processTransaction(Transaction);
+:notifyObservers(Transaction);
+:EmailNotifier.onTransactionProcessed(Transaction);
+stop
+@enduml
