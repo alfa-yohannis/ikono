@@ -1,0 +1,58 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0' // Plugin untuk JavaFX
+}
+
+// Grup proyek, biasanya nama domain terbalik dari organisasi Anda
+group = 'org.example'
+// Versi proyek
+version = '1.0-SNAPSHOT'
+
+// Repositori tempat Gradle akan mencari dependensi
+repositories {
+    mavenCentral() // Repositori Maven sentral, umum digunakan
+}
+
+// Konfigurasi spesifik untuk JavaFX
+javafx {
+    version = '21' // Versi JavaFX yang akan digunakan
+    modules = [ 'javafx.controls', 'javafx.fxml' ] // Modul JavaFX yang dibutuhkan aplikasi
+}
+
+// Konfigurasi untuk plugin aplikasi, menentukan kelas utama
+application {
+    mainClassName = 'org.example.App' // Kelas utama yang akan dijalankan
+}
+
+// Daftar dependensi yang dibutuhkan oleh proyek
+dependencies {
+    // Dependensi Hibernate ORM untuk interaksi database
+    implementation 'org.hibernate.orm:hibernate-core:6.4.4.Final'
+    // Konektor MySQL untuk memungkinkan Hibernate berkomunikasi dengan database MySQL
+    implementation 'mysql:mysql-connector-java:8.0.33'
+
+    // Dependensi Logging (SLF4J sebagai facade, SimpleLogger sebagai implementasi dasar)
+    implementation 'org.slf4j:slf4j-api:2.0.9'
+    implementation 'org.slf4j:slf4j-simple:2.0.9'
+
+    // Dependensi JUnit Jupiter untuk Unit Testing
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
+
+    // Dependensi Mockito DIHAPUS
+    // testImplementation 'org.mockito:mockito-core:5.11.0'
+    // testImplementation 'org.mockito:mockito-junit-jupiter:5.11.0'
+    // testImplementation 'org.mockito:mockito-inline:5.11.0'
+}
+
+// Konfigurasi untuk task 'test'
+test {
+    useJUnitPlatform() // Menggunakan JUnit Platform untuk menjalankan unit test
+
+    // JVM arguments yang berkaitan dengan Mockito DIHAPUS karena Mockito tidak digunakan
+    // jvmArgs += [
+    //     '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+    //     // ... argumen lainnya ...
+    // ]
+}
