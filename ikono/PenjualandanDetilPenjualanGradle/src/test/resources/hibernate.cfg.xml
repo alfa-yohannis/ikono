@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Properti Koneksi Database H2 In-Memory -->
+        <property name="connection.driver_class">org.h2.Driver</property>
+        <!-- "mem:testdb" membuat database di memori; "DB_CLOSE_DELAY=-1" menjaga database tetap ada selama koneksi ada -->
+        <property name="connection.url">jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;</property>
+        <property name="connection.username">sa</property>
+        <property name="connection.password"></property>
+
+        <!-- Dialek SQL H2 -->
+        <property name="dialect">org.hibernate.dialect.H2Dialect</property>
+
+        <!-- Tampilkan SQL ke konsol -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <!-- 'create-drop' akan membuat tabel sebelum tes dan menghapusnya setelah tes selesai -->
+        <property name="hbm2ddl.auto">create-drop</property>
+
+        <!-- Mapping ke kelas-kelas Entity (sama seperti file konfigurasi utama) -->
+        <mapping class="edu.pradita.p14.model.entitas.Produk"/>
+        <mapping class="edu.pradita.p14.model.entitas.Pembeli"/>
+        <mapping class="edu.pradita.p14.model.entitas.Transaksi"/>
+        <mapping class="edu.pradita.p14.model.entitas.DetailTransaksi"/>
+
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Properti Koneksi Database -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/db_kasir?createDatabaseIfNotExist=true</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password"></property> <!-- GANTI DENGAN PASSWORD ANDA -->
+
+        <!-- Dialek SQL yang digunakan Hibernate -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Tampilkan SQL yang dieksekusi ke konsol (berguna untuk debugging) -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <!-- Atur skema database: 'update' akan membuat/memperbarui tabel secara otomatis -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Mapping ke kelas-kelas Entity -->
+        <mapping class="edu.pradita.p14.model.entitas.Produk"/>
+        <mapping class="edu.pradita.p14.model.entitas.Pembeli"/>
+        <mapping class="edu.pradita.p14.model.entitas.Transaksi"/>
+        <mapping class="edu.pradita.p14.model.entitas.DetailTransaksi"/>
+
+    </session-factory>
+</hibernate-configuration>

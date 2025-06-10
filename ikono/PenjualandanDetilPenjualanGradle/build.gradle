@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0' // Plugin untuk JavaFX
+}
+
+group = 'edu.pradita'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+// Menentukan versi Java
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+// Konfigurasi JavaFX
+javafx {
+    version = "23.0.1"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+// Konfigurasi aplikasi utama
+application {
+    mainClass = 'edu.pradita.p14.Main'
+}
+
+// Daftar dependensi yang dibutuhkan proyek
+dependencies {
+    // Dependensi Hibernate ORM
+    implementation 'org.hibernate.orm:hibernate-core:6.5.2.Final'
+
+    // --- DEPENDENSI BARU YANG DITAMBAHKAN ---
+    // API yang dibutuhkan oleh Hibernate 6 untuk anotasi JPA
+    implementation 'jakarta.persistence:jakarta.persistence-api:3.1.0'
+
+    // Dependensi Driver Database (MySQL Connector/J)
+    implementation 'com.mysql:mysql-connector-j:8.4.0'
+
+    // Dependensi untuk Unit Testing (JUnit 5)
+    testImplementation platform('org.junit:junit-bom:5.10.2')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // Dependensi H2 Database untuk testing
+    testImplementation 'com.h2database:h2:2.2.224'
+}
+
+// Konfigurasi untuk menjalankan unit test
+test {
+    useJUnitPlatform()
+}
