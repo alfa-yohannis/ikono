@@ -1,0 +1,39 @@
+@startuml
+class Transaction {
+  - int transactionId
+  - int userId
+  - int productId
+  - int quantity
+  - double totalPrice
+}
+
+interface DataProvider {
+  + List<Transaction> getAllTransactions()
+  + void saveTransaction(Transaction t)
+  + void updateTransaction(Transaction t)
+  + void deleteTransaction(Transaction t)
+}
+
+class HibernateTransactionAdapter {
+  + getAllTransactions()
+  + saveTransaction(t)
+  + updateTransaction(t)
+  + deleteTransaction(t)
+}
+
+class HibernateUtil {
+  + static SessionFactory getSessionFactory()
+}
+
+class PrinterController {
+  - ObservableList<Transaction> transactions
+  - TableView<Transaction> transactionTable
+  ...
+}
+
+DataProvider <|.. HibernateTransactionAdapter
+HibernateTransactionAdapter --> HibernateUtil
+HibernateTransactionAdapter --> Transaction
+PrinterController --> DataProvider
+PrinterController --> Transaction
+@enduml 

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="edu.pradita.p14.PrinterController">
+    <top>
+        <Label text="Printer Database GUI" styleClass="title-label" BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox spacing="10" alignment="CENTER">
+            <padding>
+                <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+            </padding>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Database Host:"/>
+                <TextField fx:id="hostField" promptText="localhost"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Database Name:"/>
+                <TextField fx:id="dbNameField" promptText="pos_db"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Username:"/>
+                <TextField fx:id="usernameField" promptText="root"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Password:"/>
+                <PasswordField fx:id="passwordField" promptText="Password"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER">
+                <Button fx:id="connectButton" text="Connect" onAction="#handleConnect" styleClass="connect-button"/>
+                <Button fx:id="printButton" text="Print" onAction="#handlePrint" disable="true" styleClass="print-button"/>
+            </HBox>
+            <Label fx:id="statusLabel" text="Status: Not Connected" styleClass="status-label-error"/>
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox spacing="10" alignment="CENTER">
+            <padding>
+                <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+            </padding>
+
+            <HBox spacing="10" alignment="CENTER">
+                <TextField fx:id="userIdField" promptText="User ID"/>
+                <TextField fx:id="productIdField" promptText="Product ID"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER">
+                <TextField fx:id="quantityField" promptText="Quantity"/>
+                <TextField fx:id="totalPriceField" promptText="Total Price"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Add" onAction="#handleAddTransaction"/>
+                <Button text="Update" onAction="#handleUpdateTransaction"/>
+                <Button text="Delete" onAction="#handleDeleteTransaction"/>
+                <Button text="Export PDF" onAction="#handleExportPDF"/>
+                <Button text="Export Excel" onAction="#handleExportExcel"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Search (User ID/Product ID):"/>
+                <TextField fx:id="searchField" promptText="Type to search..."/>
+            </HBox>
+
+            <TableView fx:id="transactionTable" prefHeight="200" prefWidth="500">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID"/>
+                    <TableColumn fx:id="colUser" text="User ID"/>
+                    <TableColumn fx:id="colProduct" text="Product ID"/>
+                    <TableColumn fx:id="colQty" text="Quantity"/>
+                    <TableColumn fx:id="colTotal" text="Total Price"/>
+                </columns>
+            </TableView>
+
+            <Label text="© 2024 Printer GUI App" styleClass="footer-label"/>
+        </VBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,30 @@
+/* style.css */
+
+.title-label {
+  -fx-font-size: 20;
+  -fx-font-weight: bold;
+  -fx-text-fill: #2c3e50;
+}
+
+.connect-button {
+  -fx-background-color: #27ae60;
+  -fx-text-fill: white;
+}
+
+.print-button {
+  -fx-background-color: #2980b9;
+  -fx-text-fill: white;
+}
+
+.status-label-ok {
+  -fx-text-fill: #27ae60;
+}
+
+.status-label-error {
+  -fx-text-fill: #e74c3c;
+}
+
+.footer-label {
+  -fx-font-size: 12;
+  -fx-text-fill: #7f8c8d;
+}

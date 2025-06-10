@@ -1,0 +1,12 @@
+@startuml
+actor User
+participant SimpleTransactionService
+participant TransactionNotifier
+participant EmailNotifier
+
+User -> SimpleTransactionService : processTransaction(transaction)
+SimpleTransactionService -> TransactionNotifier : notifyObservers(transaction)
+TransactionNotifier -> EmailNotifier : onTransactionProcessed(transaction)
+EmailNotifier -> User : Email sent for transaction
+
+@enduml
