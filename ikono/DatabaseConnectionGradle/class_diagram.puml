@@ -1,0 +1,47 @@
+@startuml class_diagram
+' Menghilangkan ikon atribut default agar lebih bersih
+skinparam classAttributeIconSize 0
+
+title Diagram Kelas Modul Koneksi Database
+
+class Main {
+  +start(Stage) : void
+  +main(String[]) : void
+}
+
+class DatabaseConnection {
+  -dbTypeComboBox : ComboBox<DatabaseStrategy>
+  -hostField : TextField
+  -portField : TextField
+  -usernameField : TextField
+  -passwordField : PasswordField
+  -databaseField : TextField
+  -infoLabel : Label
+  -connectButton : Button
+  +initialize() : void
+  -connectToDatabase(MouseEvent) : void
+  -setInfoLabel(String, String) : void
+}
+
+class HibernateUtil <<Singleton>> <<Facade>> {
+  -sessionFactory : SessionFactory {static} {volatile}
+  +getSessionFactory(DatabaseStrategy, String, String, String, String, String) : SessionFactory {static}
+  +shutdown() : void {static}
+}
+
+interface DatabaseStrategy {
+  +getProperties(String, String, String, String, String) : Properties
+}
+
+class MySqlStrategy {
+  +getProperties(String, String, String, String, String) : Properties
+  +toString() : String
+}
+
+Main ..> DatabaseConnection : Meload FXML dan Controller
+DatabaseConnection ..> HibernateUtil : Menggunakan untuk mendapatkan SessionFactory
+DatabaseConnection ..> DatabaseStrategy : Menggunakan instance Strategy dari ComboBox
+HibernateUtil ..> DatabaseStrategy : Menggunakan Strategy untuk konfigurasi
+MySqlStrategy --|> DatabaseStrategy : Implementasi
+
+@enduml
