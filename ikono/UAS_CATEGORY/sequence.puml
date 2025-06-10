@@ -1,0 +1,47 @@
+@startuml
+' Dibuat pada: Tue Jun 10 12:10:00 WIB 2025
+' Diagram Urutan untuk Alur Menghapus Kategori
+
+title Sequence Diagram - Delete Category Flow
+
+actor User
+participant "Controller" as C
+participant "Service" as S
+participant "Repository" as R
+database "Database" as DB
+
+User -> C: Pilih baris & klik "Delete"
+C -> S: isCategoryParent(id)
+S -> R: isParent(id)
+R -> DB: SELECT count(*) WHERE parent_id=...
+DB --> R: count
+R --> S: boolean (isParent)
+S --> C: boolean
+
+alt Jika adalah parent
+  C -> User: Tampilkan pesan error "Tidak bisa dihapus"
+else Bukan parent
+  C -> User: Tampilkan dialog konfirmasi
+  User -> C: Klik "Yes"
+  C -> S: deleteCategory(id)
+  S -> R: delete(id)
+  R -> DB: DELETE FROM categories WHERE id=...
+  DB --> R: Sukses
+  R --> S:
+
+  '-- Observer Notification Starts --'
+  S -> S: notifyObservers()
+  S -> C !!: onDataChanged()
+
+  '-- UI Refresh Starts --'
+  C -> S: getAllCategories()
+  S -> R: findAll()
+  R -> DB: SELECT * FROM categories
+  DB --> R: List<Category>
+  R --> S: List<Category>
+  S --> C: List<Category>
+  C -> C: Update TableView
+  C -> User: Tampilkan pesan sukses
+end
+
+@enduml

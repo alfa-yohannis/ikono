@@ -1,0 +1,71 @@
+@startuml
+' Dibuat pada: Tue Jun 10 12:10:00 WIB 2025
+' Diagram Kelas untuk Aplikasi Manajemen Kategori
+
+title Class Diagram - Category Management Application
+
+skinparam classAttributeIconSize 0
+
+class Main {
+  + start(Stage)
+  + main(String[])
+}
+
+class CategoryController {
+  - categoryService: CategoryService
+  - categoryList: ObservableList
+  + initialize()
+  + onDataChanged()
+  - handleSave()
+  - handleUpdate()
+  - handleDelete()
+}
+
+class CategoryService {
+  - repository: CategoryRepository
+  - observers: List<CategoryObserver>
+  + addObserver(CategoryObserver)
+  + notifyObservers()
+  + getAllCategories(): List
+  + saveCategory(Category)
+}
+
+class CategoryRepository {
+  - sessionFactory: SessionFactory
+  + save(Category)
+  + update(Category)
+  + delete(int)
+  + findAll(): List
+  + isParent(int): boolean
+}
+
+class Category {
+  - id: int
+  - name: String
+  - parent: Category
+}
+
+class HibernateUtil << (S, #FF7700) Singleton >> {
+  - {static} SESSION_FACTORY: SessionFactory
+  - HibernateUtil()
+  + {static} getSessionFactory(): SessionFactory
+}
+
+interface CategoryObserver {
+  + onDataChanged()
+}
+
+' --- Relationships ---
+Main .right.> CategoryController : loads
+CategoryController .up.|> CategoryObserver
+CategoryController "1" o--> "1" CategoryService : uses >
+CategoryService "1" o--> "1" CategoryRepository : uses >
+CategoryService "1" o--> "many" CategoryObserver : notifies >
+
+CategoryRepository .> HibernateUtil : uses
+CategoryRepository .> Category : operates on
+CategoryService ..> Category : operates on
+
+Category "1" --o "0..*" Category : "parent >"
+
+@enduml

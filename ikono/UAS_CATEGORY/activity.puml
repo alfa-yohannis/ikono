@@ -1,0 +1,31 @@
+@startuml
+' Dibuat pada: Tue Jun 10 12:10:00 WIB 2025
+' Diagram Aktivitas untuk Alur Menambah Kategori Baru
+
+title Activity Diagram - Add New Category Flow
+
+start
+:Pengguna mengisi nama kategori;
+:Pengguna (opsional) memilih parent;
+:Pengguna menekan tombol "Add Category";
+if (Validasi Nama Kosong?) then (ya)
+  :Tampilkan pesan error;
+  stop
+else (tidak)
+  :Controller membuat objek Category baru;
+  :Controller memanggil categoryService.saveCategory();
+  :Service memanggil repository.save();
+  group Hibernate Transaction
+    :Repository membuka Session & Transaksi;
+    :Menyimpan data ke database;
+    :Menutup Session & Transaksi;
+  end group
+  :Service memanggil notifyObservers();
+  :Controller menerima notifikasi (onDataChanged);
+  :Controller memuat ulang data dari database;
+  :Controller membersihkan form input;
+  :Tampilkan pesan sukses;
+endif
+stop
+
+@enduml

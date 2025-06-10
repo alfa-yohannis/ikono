@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Properti Koneksi Database untuk MySQL -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/uas_category_db?createDatabaseIfNotExist=true&amp;serverTimezone=Asia/Jakarta</property>
+        <!-- Ganti 'root' dan 'password' dengan username dan password database MySQL Anda -->
+        <property name="connection.username">root</property>
+        <property name="connection.password"></property>
+
+        <!-- Dialek SQL yang sesuai untuk versi MySQL yang Anda gunakan (misalnya, MySQL 8) -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Tampilkan SQL yang dieksekusi ke konsol (berguna untuk debugging) -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <!--
+         Strategi pembuatan skema database otomatis:
+         - update: Akan memperbarui skema tabel jika ada perubahan pada file Entity Anda.
+                   Ini adalah pilihan paling aman dan paling umum untuk pengembangan.
+         - create: Akan menghapus semua tabel dan membuatnya ulang setiap kali aplikasi dimulai. Hati-hati, semua data akan hilang!
+        -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Mendaftarkan kelas Entity yang akan dipetakan ke tabel -->
+        <mapping class="edu.pradita.uas.category.model.Category"/>
+
+    </session-factory>
+</hibernate-configuration>
