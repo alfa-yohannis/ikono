@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+group = 'edu.pradita.uas.category'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+// Menentukan versi Java
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+// Konfigurasi JavaFX
+javafx {
+    version = "23.0.1"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+application {
+    // Menentukan kelas utama yang akan dijalankan
+    mainClassName = 'edu.pradita.uas.category.Main'
+}
+
+dependencies {
+    // Dependensi untuk Hibernate ORM
+    implementation 'org.hibernate.orm:hibernate-core:6.4.4.Final'
+
+    // Dependensi untuk driver MySQL
+    runtimeOnly 'mysql:mysql-connector-java:8.0.33'
+
+    // Dependensi untuk Unit Testing dengan JUnit 5
+    testImplementation platform('org.junit:junit-bom:5.10.2')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+    // Menampilkan log hasil tes di konsol
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
