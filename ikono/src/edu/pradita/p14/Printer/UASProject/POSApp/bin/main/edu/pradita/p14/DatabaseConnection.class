@@ -1,0 +1,26 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+package edu.pradita.p14;
+
+public class DatabaseConnection {
+   private static DatabaseConnection instance;
+
+   private DatabaseConnection() {
+   }
+
+   public static DatabaseConnection getInstance() {
+      if (instance == null) {
+         instance = new DatabaseConnection();
+      }
+
+      return instance;
+   }
+
+   public void connect() {
+      try {
+         System.out.println("Connected to database!");
+      } catch (Exception var2) {
+         System.err.println("Failed to connect to database: " + var2.getMessage());
+      }
+
+   }
+}
