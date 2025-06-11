@@ -1,0 +1,60 @@
+@startuml
+!theme plain
+title Diagram Kelas: Sistem Laporan Stok dan Barang
+
+class Barang {
+  -idBarang: String
+  -nama: String
+  -deskripsi: String
+  -harga: Double
+  -idSupplier: String
+  -tanggalDibuat: Date
+  -stok: Integer
+  --
+  +tambahBarang()
+  +editBarang()
+  +hapusBarang()
+  +refreshData()
+  +cekPeringatanStok()
+}
+
+class Supplier {
+  -idSupplier: String
+  -namaSupplier: String
+  -alamat: String
+  -kontak: String
+}
+
+class ProductService {
+  +addProduct(product: Product)
+  +updateProduct(product: Product)
+  +deleteProduct(productId: int)
+  +getAllProducts(): List<Product>
+}
+
+class MainApp {
+  -tableView: TableView<Product>
+  -productList: ObservableList<Product>
+  -warningArea: TextArea
+  -productService: ProductService
+  --
+  +start(primaryStage: Stage)
+  -showProductDialog(product: Product)
+  -deleteProduct(productId: int)
+  -loadDataFromDatabase()
+  -updateStockAlerts()
+  -showError(title: String, content: String)
+}
+
+Barang "N" -- "1" Supplier : memiliki >
+
+MainApp "1" o-- "1" ProductService : menggunakan >
+MainApp "1" o-- "N" Barang : mengelola >
+
+note right of Barang::cekPeringatanStok
+  Method ini akan memeriksa stok barang
+  dan menghasilkan peringatan jika stok
+  berlebihan atau menipis.
+end note
+
+@enduml

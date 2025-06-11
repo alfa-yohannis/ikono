@@ -1,0 +1,38 @@
+@startuml
+!theme plain
+title Diagram Sekuen: Memuat Data Produk Awal
+
+actor Pengguna
+participant MainApp as App
+participant ProductService as Service
+database Database as DB
+
+Pengguna -> App: Memulai Aplikasi
+activate App
+
+App -> Service: new ProductService()
+activate Service
+
+App -> App: loadDataFromDatabase()
+activate App
+
+App -> Service: getAllProducts()
+activate Service
+
+Service -> DB: SELECT * FROM Products
+activate DB
+DB --> Service: Mengembalikan daftar Produk
+deactivate DB
+
+Service --> App: Daftar Produk (List<Product>)
+deactivate Service
+
+App -> App: productList.clear()
+App -> App: productList.addAll(products)
+App -> App: tableView.setItems(productList)
+App -> App: updateStockAlerts()
+
+App --> Pengguna: Menampilkan Data Produk & Peringatan Stok
+deactivate App
+
+@enduml
