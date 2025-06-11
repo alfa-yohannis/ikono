@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.uas.util.HibernateUtilTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-06-09T06:36:33.319Z" hostname="DESKTOP-GV0VVHO" time="12.023">
+  <properties/>
+  <testcase name="testGetSessionFactoryIsSingleton()" classname="com.example.uas.util.HibernateUtilTest" time="11.56"/>
+  <testcase name="testGetSessionFactoryNotNull()" classname="com.example.uas.util.HibernateUtilTest" time="0.461"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Jun 09, 2025 1:36:33 PM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate ORM core version 6.4.4.Final
+Jun 09, 2025 1:36:35 PM org.hibernate.cache.internal.RegionFactoryInitiator initiateService
+INFO: HHH000026: Second-level cache disabled
+Jun 09, 2025 1:36:36 PM org.hibernate.engine.jdbc.connections.internal.ConnectionProviderInitiator initiateService
+INFO: HHH000130: Instantiating explicit connection provider: org.hibernate.hikaricp.internal.HikariCPConnectionProvider
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Jun 09, 2025 1:36:37 PM org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl constructDialect
+WARN: HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+Jun 09, 2025 1:36:40 PM org.hibernate.validator.internal.util.Version <clinit>
+INFO: HV000001: Hibernate Validator 8.0.1.Final
+Jun 09, 2025 1:36:44 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Jun 09, 2025 1:36:44 PM org.hibernate.cache.internal.RegionFactoryInitiator initiateService
+INFO: HHH000026: Second-level cache disabled
+Jun 09, 2025 1:36:45 PM org.hibernate.engine.jdbc.connections.internal.ConnectionProviderInitiator initiateService
+INFO: HHH000130: Instantiating explicit connection provider: org.hibernate.hikaricp.internal.HikariCPConnectionProvider
+Jun 09, 2025 1:36:45 PM org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl constructDialect
+WARN: HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+Jun 09, 2025 1:36:45 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+]]></system-err>
+</testsuite>
