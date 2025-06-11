@@ -1,0 +1,31 @@
+@startuml
+!theme plain
+title Diagram Aktivitas: Menambah Produk Baru
+
+start
+
+:Pengguna mengklik "Add Product";
+:Sistem menampilkan dialog "Add New Product";
+
+split
+  :Pengguna mengisi detail produk (Nama, Deskripsi, Harga, Supplier ID, Stok);
+  if (Validasi Input) then (Ya)
+    :Pengguna mengklik "Save";
+    :Sistem memanggil ProductService.addProduct();
+    :ProductService menyimpan data produk ke database;
+    :Sistem memuat ulang data produk dari database;
+    :Sistem memperbarui tampilan tabel;
+    :Sistem memperbarui peringatan stok;
+    :Dialog ditutup;
+  else (Tidak)
+    :Sistem menampilkan pesan error validasi;
+    :Pengguna memperbaiki input;
+    -> (Validasi Input);
+endif
+split again
+  :Pengguna mengklik "Cancel";
+  :Dialog ditutup;
+end split
+
+stop
+@enduml
