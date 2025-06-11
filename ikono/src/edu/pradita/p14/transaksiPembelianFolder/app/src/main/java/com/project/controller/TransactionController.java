@@ -1,4 +1,3 @@
-[media pointer="file-service://file-NHofuTk42Lopd9JpmSyZub"]
 package com.project.controller;
 
 import com.project.model.PurchaseDetail;
