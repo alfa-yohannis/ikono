@@ -1,0 +1,55 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0' // Pastikan versi plugin ini sesuai atau yang terbaru jika ada masalah
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JavaFX dependencies are handled by the plugin, but you can add specific ones if needed
+    // implementation 'org.openjfx:javafx-controls:17.0.10' // Contoh jika plugin tidak otomatis menambahkannya
+    // implementation 'org.openjfx:javafx-fxml:17.0.10'    // Contoh jika plugin tidak otomatis menambahkannya
+
+    // --- WAJIB: Tambahkan dependensi ini untuk koneksi ke MySQL ---
+    implementation 'mysql:mysql-connector-java:8.0.33' // Atau versi stabil terbaru
+
+    // Testing dependencies (optional)
+    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
+    testImplementation 'com.h2database:h2:2.2.224' // H2 In-Memory Database
+
+    // Other dependencies (optional)
+    implementation 'com.google.guava:guava:33.1.0-jre'
+    implementation 'org.hibernate.orm:hibernate-core:6.5.2.Final'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+javafx {
+    version = "17.0.10" // Saya sarankan menggunakan versi JavaFX yang sedikit lebih baru jika memungkinkan, misal 17.0.10 atau yang terbaru yang kompatibel
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+application {
+    // INI YANG BENAR
+    mainClass = 'org.example.App'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+// Opsi untuk mengatasi masalah Configuration Cache (jika masih muncul)
+// Kamu bisa mencoba menambahkan ini jika error cache tetap ada setelah perbaikan lain
+tasks.withType(JavaExec) {
+    if (it.name == 'run') { // Hanya targetkan task 'run'
+        it.notCompatibleWithConfigurationCache("Task 'run' for JavaFX with database operations might have issues with configuration cache.")
+    }
+}
