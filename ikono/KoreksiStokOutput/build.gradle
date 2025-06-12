@@ -1,0 +1,56 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+group 'KoreksiStokOutput'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // === DEPENDENSI UNTUK APLIKASI UTAMA ===
+
+    // 1. Hibernate ORM
+    implementation 'org.hibernate:hibernate-core:5.6.15.Final'
+
+    // 2. Konektor Database MySQL
+    implementation 'mysql:mysql-connector-java:8.0.33'
+
+
+    // === DEPENDENSI KHUSUS UNTUK TESTING ===
+
+    // 3. JUnit 5 (API untuk menulis test & Engine untuk menjalankan test)
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+
+    // 4. Database H2 (In-Memory Database untuk testing terisolasi)
+    testImplementation 'com.h2database:h2:2.2.224'
+}
+
+// Konfigurasi untuk menjalankan aplikasi JavaFX
+application {
+    mainClass = 'KoreksiStokOutput.Main'
+}
+
+javafx {
+    version = "17.0.6"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+// Konfigurasi untuk menjalankan Unit Test dengan JUnit 5
+test {
+    useJUnitPlatform()
+}
+
+// ===================================================================
+// SOLUSI UNTUK ERROR DUPLIKASI
+// Menambahkan strategi untuk menangani file duplikat seperti
+// 'hibernate.cfg.xml' yang ada di main dan test.
+// ===================================================================
+tasks.withType(Copy) {
+    setDuplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+}
