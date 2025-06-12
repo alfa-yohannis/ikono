@@ -1,0 +1,42 @@
+@startuml
+title Aktivitas: Menambahkan Data Master Baru
+
+|Pengguna|
+start
+:Mengisi Form Input
+(ID, Nama, Kuantitas);
+:Menekan Tombol "Add";
+
+|App.java (UI)|
+:Menerima Aksi Tombol "Add";
+if (Data pada Form Valid?) then (Ya)
+  :Membuat objek MasterModel;
+  :Membuat objek AddMasterModelCommand;
+  :Memanggil command.execute();
+else (Tidak)
+  :Menampilkan Alert Error Validasi;
+  stop
+endif
+
+|Command Layer|
+:AddMasterModelCommand memanggil dao.save();
+
+|DAO & Decorator Layer|
+:LoggingDecorator mencatat log "Mencoba...";
+:MasterModelDaoImpl membuka Sesi & Transaksi;
+:MasterModelDaoImpl memanggil session.persist();
+
+|Hibernate & Database|
+:Menjalankan SQL INSERT;
+
+|DAO & Decorator Layer|
+:MasterModelDaoImpl melakukan Commit;
+:LoggingDecorator mencatat log "Berhasil...";
+:Mengembalikan kontrol;
+
+|App.java (UI)|
+:Memperbarui TableView;
+:Membersihkan Form Input;
+stop
+
+@enduml

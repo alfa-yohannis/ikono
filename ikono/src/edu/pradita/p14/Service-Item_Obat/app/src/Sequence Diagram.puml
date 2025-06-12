@@ -1,0 +1,34 @@
+@startuml
+title Urutan Proses: Pengguna Menambahkan Data Master Baru
+
+actor User
+participant AppUI as "App.java"
+participant AddCmd as "AddMasterModelCommand"
+participant LogDao as "LoggingMasterModelDaoDecorator"
+participant DaoImpl as "MasterModelDaoImpl"
+database Database
+
+User -> AppUI : Klik tombol "Add"
+activate AppUI
+
+AppUI -> AddCmd : <<create>> (dao, newItem)
+AppUI -> AddCmd : execute()
+activate AddCmd
+    AddCmd -> LogDao : save(newItem)
+    activate LogDao
+        LogDao -> LogDao : // Mencatat log
+        LogDao -> DaoImpl : save(newItem)
+        activate DaoImpl
+            DaoImpl -> Database : SQL INSERT
+        DaoImpl --> LogDao
+        deactivate DaoImpl
+        LogDao -> LogDao : // Mencatat log
+    LogDao --> AddCmd
+    deactivate LogDao
+AddCmd --> AppUI
+deactivate AddCmd
+
+AppUI -> AppUI : Update TableView & Clear Form
+deactivate AppUI
+
+@enduml

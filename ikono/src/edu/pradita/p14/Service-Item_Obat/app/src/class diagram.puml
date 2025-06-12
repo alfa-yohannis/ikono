@@ -1,0 +1,81 @@
+@startuml
+title Diagram Kelas: Aplikasi Master Data
+
+skinparam classAttributeIconSize 0
+
+interface Command {
+  + execute()
+}
+
+class App {
+  - tableView: TableView<MasterModel>
+  - masterModelDao: MasterModelDao
+  + start(Stage)
+  - createAddButton(): Button
+  - loadData()
+}
+
+class MasterModel <<Entity>> {
+  - id: String {PK}
+  - name: String
+  - quantity: String
+  + getId(): String
+  + getName(): String
+  + getQuantity(): String
+}
+
+interface MasterModelDao {
+  + save(MasterModel)
+  + update(MasterModel)
+  + delete(MasterModel)
+  + findAll(): List<MasterModel>
+}
+
+class MasterModelDaoImpl {
+  - sessionFactory: SessionFactory
+}
+
+class LoggingMasterModelDaoDecorator {
+  - wrappedDao: MasterModelDao
+}
+
+class HibernateUtil <<Singleton>> {
+  - {static} sessionFactory: SessionFactory
+  + {static} getSessionFactory(): SessionFactory
+}
+
+class AddMasterModelCommand {
+  - dao: MasterModelDao
+  - itemToAdd: MasterModel
+}
+class EditMasterModelCommand {
+  - dao: MasterModelDao
+  - itemToUpdate: MasterModel
+}
+class DeleteMasterModelCommand {
+  - dao: MasterModelDao
+  - itemToDelete: MasterModel
+}
+
+App o-- MasterModelDao
+App ..> AddMasterModelCommand : creates
+App ..> EditMasterModelCommand : creates
+App ..> DeleteMasterModelCommand : creates
+
+LoggingMasterModelDaoDecorator o-- MasterModelDao : decorates >
+MasterModelDaoImpl ..> SessionFactory : uses <
+HibernateUtil ..> SessionFactory : provides <
+
+AddMasterModelCommand o-- MasterModelDao
+EditMasterModelCommand o-- MasterModelDao
+DeleteMasterModelCommand o-- MasterModelDao
+
+MasterModelDaoImpl ..|> MasterModelDao
+LoggingMasterModelDaoDecorator ..|> MasterModelDao
+AddMasterModelCommand ..|> Command
+EditMasterModelCommand ..|> Command
+DeleteMasterModelCommand ..|> Command
+
+App "1" *-- "0..*" MasterModel : displays >
+
+@enduml
